@@ -1,12 +1,12 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { HeroComponent } from './features/landing/hero/hero';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  standalone: true,
+  imports: [HeroComponent],
+  template: ` <app-hero /> `,
 })
-export class App {
-  protected readonly title = signal('catworld');
+export class AppComponent {
+  
 }

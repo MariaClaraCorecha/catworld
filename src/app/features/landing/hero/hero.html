@@ -1,1 +1,16 @@
-<p>hero works!</p>
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">{{headline}}</h1>
+        <p class="subtitle">{{subtitle}}</p>
+
+        <div class="hero-topics">
+            <span class="topic-pill" *ngFor="let topics of topics">
+                {{topics.icon}} {{topics.label}}
+            </span>
+        </div>
+
+        <button class="hero-cta">
+            Explore Mais
+        </button>
+    </div>
+</section>
