@@ -1,1 +1,31 @@
-<p>navbar works!</p>
+<nav class="navbar" [class.scrolled]="scrolled">
+  <div class="nav-inner">
+
+    <div class="nav-logo" (click)="scrollTo('hero')">
+      🐱 CatWorld
+    </div>
+
+    <!-- Menu desktop -->
+    <ul class="nav-links">
+      <li *ngFor="let link of links">
+        <a (click)="scrollTo(link.id)">{{ link.label }}</a>
+      </li>
+    </ul>
+
+    <!-- Botão login (vamos implementar depois) -->
+    <button class="nav-btn-login">Entrar com Google</button>
+
+    <!-- Botão hamburguer (mobile) -->
+    <button class="nav-hamburger" (click)="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+
+  <!-- Menu mobile -->
+  <div class="nav-mobile" [class.open]="menuOpen">
+    <a *ngFor="let link of links" (click)="scrollTo(link.id)">
+      {{ link.label }}
+    </a>
+  </div>
+</nav>
