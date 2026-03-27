@@ -1,7 +1,25 @@
 <section class="hero">
-  <mat-chip-set class="hero-topics">
-    <mat-chip *ngFor="let topic of topics"> {{ topic.icon }} {{ topic.label }} </mat-chip>
-  </mat-chip-set>
+  <div class="hero-content">
 
-  <button mat-raised-button color="primary" class="hero-cta">Explorar agora</button>
+    <span class="hero-eyebrow">
+      <mat-icon>pets</mat-icon>
+      Bem-vindo ao CatWorld
+    </span>
+
+    <h1 class="hero-title">{{ headline }}</h1>
+    <p class="hero-subtitle">{{ subtitle }}</p>
+
+    <mat-chip-set class="hero-topics">
+      <mat-chip *ngFor="let topic of topics">
+        <mat-icon matChipAvatar>{{ topic.icon }}</mat-icon>
+        {{ topic.label }}
+      </mat-chip>
+    </mat-chip-set>
+
+    <button mat-raised-button color="primary" class="hero-cta">
+      <mat-icon>explore</mat-icon>
+      Explorar agora
+    </button>
+
+  </div>
 </section>
