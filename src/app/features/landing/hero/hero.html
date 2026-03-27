@@ -1,16 +1,7 @@
 <section class="hero">
-    <div class="hero-content">
-        <h1 class="hero-title">{{headline}}</h1>
-        <p class="subtitle">{{subtitle}}</p>
+  <mat-chip-set class="hero-topics">
+    <mat-chip *ngFor="let topic of topics"> {{ topic.icon }} {{ topic.label }} </mat-chip>
+  </mat-chip-set>
 
-        <div class="hero-topics">
-            <span class="topic-pill" *ngFor="let topics of topics">
-                {{topics.icon}} {{topics.label}}
-            </span>
-        </div>
-
-        <button class="hero-cta">
-            Explore Mais
-        </button>
-    </div>
+  <button mat-raised-button color="primary" class="hero-cta">Explorar agora</button>
 </section>

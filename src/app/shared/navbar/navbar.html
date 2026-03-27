@@ -1,31 +1,45 @@
-<nav class="navbar" [class.scrolled]="scrolled">
+<mat-toolbar class="navbar" [class.scrolled]="scrolled">
   <div class="nav-inner">
 
-    <div class="nav-logo" (click)="scrollTo('hero')">
+    <span class="nav-logo" (click)="scrollTo('hero')">
       🐱 CatWorld
-    </div>
+    </span>
 
-    <!-- Menu desktop -->
-    <ul class="nav-links">
-      <li *ngFor="let link of links">
-        <a (click)="scrollTo(link.id)">{{ link.label }}</a>
-      </li>
-    </ul>
+    <span class="nav-spacer"></span>
 
-    <!-- Botão login (vamos implementar depois) -->
-    <button class="nav-btn-login">Entrar com Google</button>
+    <!-- Links desktop -->
+    <nav class="nav-links">
+      <button
+        mat-button
+        *ngFor="let link of links"
+        (click)="scrollTo(link.id)"
+        class="nav-link-btn"
+      >
+        {{ link.label }}
+      </button>
+    </nav>
 
-    <!-- Botão hamburguer (mobile) -->
-    <button class="nav-hamburger" (click)="toggleMenu()">
-      <span></span><span></span><span></span>
+    <!-- Login -->
+    <button mat-raised-button color="primary" class="nav-btn-login">
+      <mat-icon>account_circle</mat-icon>
+      Entrar com Google
+    </button>
+
+    <!-- Hamburguer mobile -->
+    <button mat-icon-button class="nav-hamburger" (click)="toggleMenu()">
+      <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
     </button>
 
   </div>
 
   <!-- Menu mobile -->
   <div class="nav-mobile" [class.open]="menuOpen">
-    <a *ngFor="let link of links" (click)="scrollTo(link.id)">
+    <button
+      mat-button
+      *ngFor="let link of links"
+      (click)="scrollTo(link.id)"
+    >
       {{ link.label }}
-    </a>
+    </button>
   </div>
-</nav>
+</mat-toolbar>
