@@ -16,7 +16,7 @@ interface HistoryCard{
   templateUrl: './history.html',
   styleUrl: './history.scss',
 })
-export class History {
+export class HistoryComponent {
   cards: HistoryCard[] = [
     {
       period: 'Egito Antigo',

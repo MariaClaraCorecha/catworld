@@ -1,1 +1,56 @@
+<section id="historia" class="section">
+  <div class="container">
 
+    <h2 class="section-title">História dos Gatos na Humanidade</h2>
+    <p class="section-sub">
+      Uma jornada de 10.000 anos ao lado do ser humano
+    </p>
+
+    <!-- Timeline label -->
+    <div class="timeline-bar">
+      <span class="timeline-line"></span>
+      <span class="timeline-label">4.000 a.C. → hoje</span>
+      <span class="timeline-line"></span>
+    </div>
+
+    <!-- Grid de cards -->
+    <div class="history-grid">
+      <div
+        class="history-card"
+        *ngFor="let card of cards"
+        (click)="openCard(card)"
+      >
+        <!-- Foto -->
+        <div class="card-image">
+          <img [src]="card.image" [alt]="card.title" loading="lazy" />
+          <span class="card-period">{{ card.period }}</span>
+          <span class="card-year">{{ card.year }}</span>
+        </div>
+
+        <!-- Texto -->
+        <div class="card-body">
+          <h3 class="card-title">{{ card.title }}</h3>
+          <p class="card-text">{{ card.text }}</p>
+          <span class="card-read-more">Ler mais →</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Modal de detalhes -->
+<div class="modal-overlay" *ngIf="selectedCard" (click)="closeCard()">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <button class="modal-close" (click)="closeCard()">✕</button>
+    <img [src]="selectedCard.image" [alt]="selectedCard.title" class="modal-image" />
+    <div class="modal-content">
+      <div class="modal-meta">
+        <span class="card-period">{{ selectedCard.period }}</span>
+        <span class="card-year">{{ selectedCard.year }}</span>
+      </div>
+      <h2>{{ selectedCard.title }}</h2>
+      <p>{{ selectedCard.text }}</p>
+    </div>
+  </div>
+</div>
