@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { HeroComponent } from './features/landing/hero/hero';
+import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './shared/navbar/navbar';
-import { HistoryComponent } from './features/landing/history/history';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeroComponent, NavbarComponent, HistoryComponent],
-  template: ` <app-hero /> <app-navbar/> <app-history/>`,
+  imports: [RouterOutlet, NavbarComponent],
+  template: `
+    <app-navbar />
+    <router-outlet />
+  `,
 })
-export class AppComponent {
-  
-}
+export class AppComponent {}
