@@ -1,13 +1,14 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule, MatIcon } from '@angular/material/icon';
-import { MatToolbarModule, MatToolbar } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, MatToolbar, MatIcon],
+  imports: [CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
@@ -30,11 +31,11 @@ export class NavbarComponent {
   }
 
   links = [
-    { label: 'Raças', id: 'racas' },
-    { label: 'Cuidados', id: 'cuidados' },
-    { label: 'Alimentação', id: 'alimentacao' },
-    { label: 'Exercícios', id: 'exercicios' },
-    { label: 'Curiosidades', id: 'curiosidades' },
-    { label: 'História', id: 'historia' },
+    { label: 'Raças', id: 'racas', icon: 'pets' },
+    { label: 'Cuidados', id: 'cuidados', icon: 'medical_services' },
+    { label: 'Alimentação', id: 'alimentacao', icon: 'restaurant' },
+    { label: 'Exercícios', id: 'exercicios', icon: 'directions_run' },
+    { label: 'Curiosidades', id: 'curiosidades', icon: 'auto_awesome' },
+    { label: 'História', id: 'historia', icon: 'history_edu' },
   ];
 }

@@ -1,45 +1,64 @@
 <mat-toolbar class="navbar" [class.scrolled]="scrolled">
-  <div class="nav-inner">
 
-    <span class="nav-logo" (click)="scrollTo('hero')">
-      🐱 CatWorld
-    </span>
+  <!-- Logo -->
+  <button mat-button class="nav-logo" (click)="scrollTo('hero')">
+    <mat-icon>pets</mat-icon>
+    CatWorld
+  </button>
 
-    <span class="nav-spacer"></span>
+  <span class="nav-spacer"></span>
 
-    <!-- Links desktop -->
-    <nav class="nav-links">
-      <button
-        mat-button
-        *ngFor="let link of links"
-        (click)="scrollTo(link.id)"
-        class="nav-link-btn"
-      >
-        {{ link.label }}
-      </button>
-    </nav>
-
-    <!-- Login -->
-    <button mat-raised-button color="primary" class="nav-btn-login">
-      <mat-icon>account_circle</mat-icon>
-      Entrar com Google
-    </button>
-
-    <!-- Hamburguer mobile -->
-    <button mat-icon-button class="nav-hamburger" (click)="toggleMenu()">
-      <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
-    </button>
-
-  </div>
-
-  <!-- Menu mobile -->
-  <div class="nav-mobile" [class.open]="menuOpen">
+  <!-- Links desktop -->
+  <nav class="nav-links">
     <button
       mat-button
       *ngFor="let link of links"
       (click)="scrollTo(link.id)"
+      class="nav-link-btn"
     >
+      <mat-icon>{{ link.icon }}</mat-icon>
       {{ link.label }}
     </button>
-  </div>
+  </nav>
+
+  <span class="nav-spacer"></span>
+
+  <!-- Botão login desktop -->
+  <button
+    mat-stroked-button
+    color="primary"
+    class="nav-btn-login"
+  >
+    <mat-icon>account_circle</mat-icon>
+    Entrar com Google
+  </button>
+
+  <!-- Botão menu mobile -->
+  <button
+    mat-icon-button
+    class="nav-hamburger"
+    (click)="toggleMenu()"
+    aria-label="Abrir menu"
+  >
+    <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
+  </button>
+
 </mat-toolbar>
+
+<!-- Menu mobile — dropdown abaixo da toolbar -->
+<div class="nav-mobile" [class.open]="menuOpen">
+  <button
+    mat-button
+    *ngFor="let link of links"
+    (click)="scrollTo(link.id)"
+    class="nav-mobile-btn"
+  >
+    <mat-icon>{{ link.icon }}</mat-icon>
+    {{ link.label }}
+  </button>
+
+  <button mat-stroked-button color="primary" class="nav-mobile-login">
+    <mat-icon>account_circle</mat-icon>
+    Entrar com Google
+  </button>
+</div>
