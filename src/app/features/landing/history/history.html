@@ -2,55 +2,52 @@
   <div class="container">
 
     <h2 class="section-title">História dos Gatos na Humanidade</h2>
-    <p class="section-sub">
-      Uma jornada de 10.000 anos ao lado do ser humano
-    </p>
+    <p class="section-sub">Uma jornada de 10.000 anos ao lado do ser humano</p>
 
-    <!-- Timeline label -->
     <div class="timeline-bar">
       <span class="timeline-line"></span>
+      <mat-icon class="timeline-icon">history_edu</mat-icon>
       <span class="timeline-label">4.000 a.C. → hoje</span>
+      <mat-icon class="timeline-icon">history_edu</mat-icon>
       <span class="timeline-line"></span>
     </div>
 
-    <!-- Grid de cards -->
     <div class="history-grid">
-      <div
-        class="history-card"
+      <mat-card
         *ngFor="let card of cards"
-        (click)="openCard(card)"
+        class="history-card"
+        matRipple
+        (click)="goToDetail(card.id)"
       >
-        <!-- Foto -->
-        <div class="card-image">
-          <img [src]="card.image" [alt]="card.title" loading="lazy" />
-          <span class="card-period">{{ card.period }}</span>
-          <span class="card-year">{{ card.year }}</span>
-        </div>
+        <img mat-card-image [src]="card.image" [alt]="card.title" loading="lazy" />
 
-        <!-- Texto -->
-        <div class="card-body">
-          <h3 class="card-title">{{ card.title }}</h3>
-          <p class="card-text">{{ card.text }}</p>
-          <span class="card-read-more">Ler mais →</span>
-        </div>
-      </div>
+        <mat-card-header>
+          <mat-card-title>{{ card.title }}</mat-card-title>
+          <mat-card-subtitle>
+            <mat-chip-set>
+              <mat-chip color="primary" highlighted>
+                <mat-icon matChipAvatar>schedule</mat-icon>
+                {{ card.period }}
+              </mat-chip>
+              <mat-chip>{{ card.year }}</mat-chip>
+            </mat-chip-set>
+          </mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p class="card-text">{{ card.summary }}</p>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button mat-button color="primary">
+            <mat-icon>auto_stories</mat-icon>
+            Ler artigo completo
+          </button>
+          <mat-icon class="card-arrow">arrow_forward</mat-icon>
+        </mat-card-actions>
+
+      </mat-card>
     </div>
 
   </div>
 </section>
-
-<!-- Modal de detalhes -->
-<div class="modal-overlay" *ngIf="selectedCard" (click)="closeCard()">
-  <div class="modal" (click)="$event.stopPropagation()">
-    <button class="modal-close" (click)="closeCard()">✕</button>
-    <img [src]="selectedCard.image" [alt]="selectedCard.title" class="modal-image" />
-    <div class="modal-content">
-      <div class="modal-meta">
-        <span class="card-period">{{ selectedCard.period }}</span>
-        <span class="card-year">{{ selectedCard.year }}</span>
-      </div>
-      <h2>{{ selectedCard.title }}</h2>
-      <p>{{ selectedCard.text }}</p>
-    </div>
-  </div>
-</div>

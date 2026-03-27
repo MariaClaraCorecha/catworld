@@ -1,0 +1,61 @@
+<div class="detail-page" *ngIf="card() as c">
+
+  <!-- Hero da página -->
+  <div class="detail-hero">
+    <img [src]="c.image" [alt]="c.title" class="detail-hero-img" />
+    <div class="detail-hero-overlay">
+      <div class="detail-hero-content">
+
+        <button mat-button class="back-btn" (click)="goBack()">
+          <mat-icon>arrow_back</mat-icon>
+          Voltar para história
+        </button>
+
+        <mat-chip-set class="detail-chips">
+          <mat-chip color="primary" highlighted>
+            <mat-icon matChipAvatar>schedule</mat-icon>
+            {{ c.period }}
+          </mat-chip>
+          <mat-chip>{{ c.year }}</mat-chip>
+        </mat-chip-set>
+
+        <h1 class="detail-title">{{ c.title }}</h1>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Conteúdo do artigo -->
+  <div class="detail-body">
+    <div class="detail-container">
+
+      <p class="detail-summary">{{ c.summary }}</p>
+
+      <mat-divider></mat-divider>
+
+      <!-- Parágrafos do content -->
+      <div class="detail-content">
+        <p *ngFor="let paragraph of c.content.trim().split('\n\n')">
+          {{ paragraph.trim() }}
+        </p>
+      </div>
+
+      <div *ngIf="c.imageCaption" class="detail-caption">
+        <mat-icon>photo_camera</mat-icon>
+        {{ c.imageCaption }}
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <!-- Navegação inferior -->
+      <div class="detail-footer-nav">
+        <button mat-stroked-button color="primary" (click)="goBack()">
+          <mat-icon>arrow_back</mat-icon>
+          Ver todos os períodos
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
