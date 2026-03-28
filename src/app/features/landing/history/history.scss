@@ -1,117 +1,63 @@
 .timeline-bar {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
   margin-bottom: 3rem;
 }
 
 .timeline-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(233, 69, 96, 0.5),
-    transparent
-  );
+  background: #f8bbd0;
+}
+
+.timeline-icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .timeline-label {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.78rem;
+  font-weight: 500;
   white-space: nowrap;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-// Grid de cards
 .history-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
+  align-items: stretch;
 }
 
-// Card
 .history-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  overflow: hidden;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
   cursor: pointer;
-  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
 
-  &:hover {
-    transform: translateY(-6px);
-    border-color: rgba(233, 69, 96, 0.45);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-
-    .card-image img {
-      transform: scale(1.06);
-    }
-
-    .card-read-more {
-      color: #e94560;
-      gap: 6px;
-    }
+  img[mat-card-image] {
+    height: 200px !important;
+    object-fit: cover !important;
+    margin: 0 !important;
   }
-}
 
-// Imagem do card
-.card-image {
-  position: relative;
-  height: 200px;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
+  mat-card-content {
+    flex: 1 !important;
   }
-}
 
-// Badges sobre a imagem
-.card-period {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: rgba(233, 69, 96, 0.85);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.25rem 0.7rem;
-  border-radius: 20px;
-  letter-spacing: 0.03em;
-}
-
-.card-year {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(0, 0, 0, 0.6);
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.75rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 20px;
-  backdrop-filter: blur(4px);
-}
-
-// Corpo do card
-.card-body {
-  padding: 1.25rem;
-}
-
-.card-title {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 0.6rem;
-  line-height: 1.35;
+  mat-card-actions {
+    margin-top: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
 }
 
 .card-text {
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.55);
   line-height: 1.65;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -119,101 +65,6 @@
   overflow: hidden;
 }
 
-.card-read-more {
-  display: inline-block;
-  margin-top: 0.75rem;
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.4);
-  transition: color 0.2s, gap 0.2s;
-}
-
-// Modal
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  padding: 1rem;
-  animation: fadeIn 0.2s ease;
-}
-
-.modal {
-  background: #1a1a2e;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  max-width: 560px;
-  width: 100%;
-  overflow: hidden;
-  animation: slideUp 0.25s ease;
-  position: relative;
-}
-
-.modal-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: #fff;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  font-size: 0.9rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s;
-  z-index: 1;
-
-  &:hover { background: rgba(233, 69, 96, 0.7); }
-}
-
-.modal-image {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-}
-
-.modal-content {
-  padding: 1.5rem;
-
-  h2 {
-    font-size: 1.3rem;
-    color: #fff;
-    margin: 0.75rem 0;
-  }
-
-  p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-}
-
-.modal-meta {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-
-
-  .card-period,
-  .card-year {
-    position: static; 
-  }
-}
-
-// Animações
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { transform: translateY(30px); opacity: 0; }
-  to   { transform: translateY(0);    opacity: 1; }
+.card-arrow {
+  margin-right: 8px;
 }

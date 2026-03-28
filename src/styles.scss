@@ -2,74 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-// ─── Paleta rosa personalizada ───────────────────────────────────
-$catworld-pink: mat.m2-define-palette((
-  50:   #fce4ec,
-  100:  #f8bbd0,
-  200:  #f48fb1,
-  300:  #f06292,
-  400:  #ec407a,
-  500:  #e91e63,   // cor principal
-  600:  #d81b60,
-  700:  #c2185b,
-  800:  #ad1457,
-  900:  #880e4f,
-  A100: #ff80ab,
-  A200: #ff4081,
-  A400: #f50057,
-  A700: #c51162,
-  contrast: (
-    50:   rgba(0,0,0,0.87),
-    100:  rgba(0,0,0,0.87),
-    200:  rgba(0,0,0,0.87),
-    300:  rgba(0,0,0,0.87),
-    400:  rgba(0,0,0,0.87),
-    500:  white,
-    600:  white,
-    700:  white,
-    800:  white,
-    900:  white,
-  )
-), 500, 100, 700);
-
-// Paleta secundária — rosa mais claro / lilás
-$catworld-accent: mat.m2-define-palette((
-  50:   #fce4ec,
-  100:  #f8bbd0,
-  200:  #f48fb1,
-  300:  #f06292,
-  400:  #ec407a,
-  500:  #ff80ab,
-  600:  #f48fb1,
-  700:  #f06292,
-  800:  #ec407a,
-  900:  #e91e63,
-  A100: #ffffff,
-  A200: #ffd6e7,
-  A400: #ffadd0,
-  A700: #ff94c2,
-  contrast: (
-    50:  rgba(0,0,0,0.87),
-    100: rgba(0,0,0,0.87),
-    200: rgba(0,0,0,0.87),
-    300: rgba(0,0,0,0.87),
-    400: rgba(0,0,0,0.87),
-    500: rgba(0,0,0,0.87),
-    600: rgba(0,0,0,0.87),
-    700: rgba(0,0,0,0.87),
-    800: rgba(0,0,0,0.87),
-    900: white,
-  )
-), 500, 100, 700);
-
+// ─── Paleta rosa ──────────────────────────────────────────────────
+$catworld-pink: mat.m2-define-palette(mat.$m2-pink-palette, 500, 100, 700);
+$catworld-accent: mat.m2-define-palette(mat.$m2-pink-palette, A100, A100, A200);
 $catworld-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-// ─── Tema claro ──────────────────────────────────────────────────
 $catworld-theme: mat.m2-define-light-theme((
   color: (
-    primary:   $catworld-pink,
-    accent:    $catworld-accent,
-    warn:      $catworld-warn,
+    primary: $catworld-pink,
+    accent:  $catworld-accent,
+    warn:    $catworld-warn,
   ),
   typography: mat.m2-define-typography-config(
     $font-family: 'Inter, sans-serif',
@@ -77,63 +19,39 @@ $catworld-theme: mat.m2-define-light-theme((
   density: 0,
 ));
 
-// Aplica o tema
 @include mat.all-component-themes($catworld-theme);
-
-// ─── Variáveis CSS globais ────────────────────────────────────────
-:root {
-  --color-bg:            #ffffff;
-  --color-bg-alt:        #fff5f8;
-  --color-bg-card:       #ffffff;
-
-  --color-pink-50:       #fce4ec;
-  --color-pink-100:      #f8bbd0;
-  --color-pink-200:      #f48fb1;
-  --color-pink-400:      #ec407a;
-  --color-pink-500:      #e91e63;
-  --color-pink-600:      #c2185b;
-
-  --color-text-primary:   #2d1a26;
-  --color-text-secondary: #7a4a5e;
-  --color-text-muted:     #b08898;
-
-  --color-accent:        #e91e63;
-  --color-accent-soft:   #fce4ec;
-  --color-accent-hover:  #c2185b;
-
-  --shadow-sm:  0 2px 8px  rgba(233, 30, 99, 0.08);
-  --shadow-md:  0 6px 24px rgba(233, 30, 99, 0.12);
-  --shadow-lg:  0 16px 48px rgba(233, 30, 99, 0.16);
-
-  --radius-sm:  8px;
-  --radius-md:  14px;
-  --radius-lg:  20px;
-
-  --font-display: 'Playfair Display', serif;
-  --font-body:    'Inter', sans-serif;
-}
 
 // ─── Reset ────────────────────────────────────────────────────────
 *, *::before, *::after {
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text-primary);
-  font-family: var(--font-body);
-  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
   -webkit-font-smoothing: antialiased;
 }
 
-// ─── Utilitários de seção ─────────────────────────────────────────
-.section { padding: 6rem 2rem; }
+// ─── Scrollbar ────────────────────────────────────────────────────
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #fff; }
+::-webkit-scrollbar-thumb {
+  background: #f8bbd0;
+  border-radius: 10px;
+  &:hover { background: #f48fb1; }
+}
+
+// ─── Utilitários de seção — só layout, zero cor manual ───────────
+.section {
+  padding: 5rem 2rem;
+}
 
 .section:nth-child(even) {
-  background-color: var(--color-bg-alt);
+  background-color: #fce4ec; // pink-50 do Material
 }
 
 .container {
@@ -142,84 +60,26 @@ body {
 }
 
 .section-title {
-  font-family: var(--font-display);
+  font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 700;
-  color: var(--color-text-primary);
   text-align: center;
   margin-bottom: 0.6rem;
+  color: #880e4f; // pink-900
 }
 
 .section-sub {
   text-align: center;
-  color: var(--color-text-secondary);
   font-size: 1.05rem;
   margin-bottom: 3rem;
   font-weight: 300;
+  color: #ad1457; // pink-800
 }
 
-// ─── Overrides globais do Material ────────────────────────────────
-
-// Botões primários
-.mat-mdc-raised-button.mat-primary,
-.mat-mdc-flat-button.mat-primary {
-  background-color: var(--color-accent) !important;
-  color: #fff !important;
-  border-radius: 30px !important;
-  font-family: var(--font-body) !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.02em !important;
-  box-shadow: 0 4px 16px rgba(233, 30, 99, 0.3) !important;
-  transition: transform 0.2s, box-shadow 0.2s !important;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(233, 30, 99, 0.4) !important;
-  }
+// ─── Correção chip highlighted ────────────────────────────────────
+.mdc-evolution-chip--selected .mdc-evolution-chip__text-label {
+  color: white !important;
 }
-
-// Cards Material
-.mat-mdc-card {
-  border-radius: var(--radius-md) !important;
-  box-shadow: var(--shadow-sm) !important;
-  border: 1px solid var(--color-pink-50) !important;
-  transition: transform 0.25s, box-shadow 0.25s !important;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg) !important;
-  }
-}
-
-// Chips
-.mat-mdc-chip.mat-primary {
-  background-color: var(--color-accent-soft) !important;
-  color: var(--color-accent) !important;
-  font-weight: 500 !important;
-}
-
-// Inputs / form fields
-.mat-mdc-form-field {
-  .mdc-notched-outline__leading,
-  .mdc-notched-outline__notch,
-  .mdc-notched-outline__trailing {
-    border-color: var(--color-pink-100) !important;
-  }
-
-  &.mat-focused {
-    .mdc-notched-outline__leading,
-    .mdc-notched-outline__notch,
-    .mdc-notched-outline__trailing {
-      border-color: var(--color-accent) !important;
-    }
-  }
-}
-
-// Scrollbar
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #fff; }
-::-webkit-scrollbar-thumb {
-  background: var(--color-pink-100);
-  border-radius: 10px;
-  &:hover { background: var(--color-pink-200); }
+.mdc-evolution-chip--selected .mat-icon {
+  color: white !important;
 }

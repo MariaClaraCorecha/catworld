@@ -1,9 +1,7 @@
 .detail-page {
   min-height: 100vh;
-  background: #fff;
 }
 
-// ─── Hero com imagem ──────────────────────────────────────────────
 .detail-hero {
   position: relative;
   height: 480px;
@@ -19,11 +17,7 @@
 .detail-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(45, 26, 38, 0.3)  0%,
-    rgba(45, 26, 38, 0.75) 100%
-  );
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.65) 100%);
   display: flex;
   align-items: flex-end;
 }
@@ -39,10 +33,6 @@
   color: rgba(255,255,255,0.85) !important;
   margin-bottom: 1rem;
   padding-left: 0 !important;
-
-  mat-icon { margin-right: 4px; }
-
-  &:hover { color: #fff !important; }
 }
 
 .detail-chips {
@@ -57,7 +47,6 @@
   line-height: 1.2;
 }
 
-// ─── Corpo do artigo ─────────────────────────────────────────────
 .detail-body {
   padding: 3rem 2rem 5rem;
 }
@@ -72,11 +61,12 @@
 
 .detail-summary {
   font-size: 1.2rem;
-  color: #7a4a5e;
   font-weight: 300;
   line-height: 1.75;
-  border-left: 3px solid #e91e63;
+  border-left: 3px solid;
+  border-color: #e91e63;
   padding-left: 1.25rem;
+  color: #ad1457;
 }
 
 .detail-content {
@@ -86,7 +76,6 @@
 
   p {
     font-size: 1rem;
-    color: #2d1a26;
     line-height: 1.85;
     text-align: justify;
   }
@@ -97,14 +86,12 @@
   align-items: center;
   gap: 6px;
   font-size: 0.85rem;
-  color: #b08898;
   font-style: italic;
 
   mat-icon {
     font-size: 16px;
     width: 16px;
     height: 16px;
-    color: #e91e63;
   }
 }
 
