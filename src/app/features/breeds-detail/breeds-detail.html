@@ -1,0 +1,137 @@
+<div class="detail-page" *ngIf="breed() as b">
+
+  <div class="detail-hero">
+    <img [src]="b.image" [alt]="b.name" class="detail-hero-img" />
+    <div class="detail-hero-overlay">
+      <div class="detail-hero-content">
+
+        <button mat-button class="back-btn" (click)="goBack()">
+          <mat-icon>arrow_back</mat-icon>
+          Voltar para raças
+        </button>
+
+        <mat-chip-set class="detail-chips">
+          <mat-chip color="primary" highlighted>
+            <mat-icon matChipAvatar>place</mat-icon>
+            {{ b.origin }}
+          </mat-chip>
+          <mat-chip>
+            <mat-icon matChipAvatar>schedule</mat-icon>
+            {{ b.lifespan }}
+          </mat-chip>
+          <mat-chip>
+            <mat-icon matChipAvatar>monitor_weight</mat-icon>
+            {{ b.weight }}
+          </mat-chip>
+        </mat-chip-set>
+
+        <h1 class="detail-title">{{ b.name }}</h1>
+        <p class="detail-temperament">{{ b.temperament }}</p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-body">
+    <div class="detail-container">
+
+      <p class="detail-summary">{{ b.summary }}</p>
+
+      <mat-divider />
+
+      <div class="characteristics">
+        <h3 class="char-title">
+          <mat-icon>bar_chart</mat-icon>
+          Características
+        </h3>
+        <div class="char-list">
+
+          <div class="char-item">
+            <span class="char-label">
+              <mat-icon>bolt</mat-icon> Energia
+            </span>
+            <div class="char-bar-wrap">
+              <div class="char-bar" [style.width.%]="b.characteristics.energy * 20"></div>
+            </div>
+            <span class="char-value">{{ b.characteristics.energy }}/5</span>
+          </div>
+
+          <div class="char-item">
+            <span class="char-label">
+              <mat-icon>favorite</mat-icon> Carinho
+            </span>
+            <div class="char-bar-wrap">
+              <div class="char-bar" [style.width.%]="b.characteristics.affection * 20"></div>
+            </div>
+            <span class="char-value">{{ b.characteristics.affection }}/5</span>
+          </div>
+
+          <div class="char-item">
+            <span class="char-label">
+              <mat-icon>content_cut</mat-icon> Tosa
+            </span>
+            <div class="char-bar-wrap">
+              <div class="char-bar" [style.width.%]="b.characteristics.grooming * 20"></div>
+            </div>
+            <span class="char-value">{{ b.characteristics.grooming }}/5</span>
+          </div>
+
+          <div class="char-item">
+            <span class="char-label">
+              <mat-icon>air</mat-icon> Pelos
+            </span>
+            <div class="char-bar-wrap">
+              <div class="char-bar" [style.width.%]="b.characteristics.shedding * 20"></div>
+            </div>
+            <span class="char-value">{{ b.characteristics.shedding }}/5</span>
+          </div>
+
+          <div class="char-item">
+            <span class="char-label">
+              <mat-icon>groups</mat-icon> Social
+            </span>
+            <div class="char-bar-wrap">
+              <div class="char-bar" [style.width.%]="b.characteristics.social * 20"></div>
+            </div>
+            <span class="char-value">{{ b.characteristics.social }}/5</span>
+          </div>
+
+        </div>
+      </div>
+
+      <mat-divider />
+
+      <div class="detail-content">
+        <p *ngFor="let paragraph of b.content.trim().split('\n\n')">
+          {{ paragraph.trim() }}
+        </p>
+      </div>
+
+      <mat-divider />
+
+      <div class="facts">
+        <h3 class="char-title">
+          <mat-icon>auto_awesome</mat-icon>
+          Você sabia?
+        </h3>
+        <div class="facts-list">
+          <div class="fact-item" *ngFor="let fact of b.facts">
+            <mat-icon>check_circle</mat-icon>
+            <span>{{ fact }}</span>
+          </div>
+        </div>
+      </div>
+
+      <mat-divider />
+
+      <div class="detail-footer-nav">
+        <button mat-stroked-button color="primary" (click)="goBack()">
+          <mat-icon>arrow_back</mat-icon>
+          Ver todas as raças
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
