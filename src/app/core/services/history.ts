@@ -38,7 +38,7 @@ export class HistoryService {
         era o principal centro de culto à Bastet, atraindo peregrinos de todo o Egito para o grande festival anual 
         em honra da deusa, descrito pelo historiador grego Heródoto como a celebração mais animada do país.
       `,
-      image: 'https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?w=800&q=80',
+      image: 'images/history/egito-cat.jpg',
       imageCaption: 'Representação de Bastet, a deusa egípcia com cabeça de gato',
     },
     {
@@ -64,7 +64,7 @@ export class HistoryService {
         espalhando-se por toda a Europa muito antes da Idade Média. Escavações arqueológicas em sítios romanos por 
         toda a Europa encontraram ossos de gatos, confirmando sua presença generalizada.
       `,
-      image: 'https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?w=800&q=80',
+      image: 'images/history/celeiro-cat.jpg',
       imageCaption: 'Mosaico romano retratando um gato caçando, século I d.C.',
     },
     {
@@ -92,7 +92,7 @@ export class HistoryService {
         Apenas no século XVII os gatos começaram a se reabilitar na Europa, quando sua utilidade no controle de 
         pragas finalmente superou o peso das superstições.
       `,
-      image: 'https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?w=800&q=80',
+      image: 'images/history/black-cat.jpg',
       imageCaption: 'Iluminura medieval representando gatos em contexto doméstico',
     },
     {
@@ -121,7 +121,7 @@ export class HistoryService {
         essas criaturas eram tratadas com respeito, pois se acreditava que um gato bem tratado traria 
         bênçãos à família.
       `,
-      image: 'https://images.unsplash.com/photo-1611915387288-fd8d2f5f928b?w=800&q=80',
+      image: 'images/history/manekineko.jpg',
       imageCaption: 'Maneki-neko tradicional — o gato da sorte japonês',
     },
     {
@@ -149,7 +149,7 @@ export class HistoryService {
         Documentos da expedição mencionam gatos a bordo, e pinturas do período colonial já os 
         mostram integrados ao cotidiano das casas brasileiras.
       `,
-      image: 'https://images.unsplash.com/photo-1561948955-570b270e7c36?w=800&q=80',
+      image: 'images/history/explorador-cat.jpg',
       imageCaption:
         'Réplica de nau portuguesa do século XV — os gatos eram membros essenciais da tripulação',
     },
@@ -179,7 +179,7 @@ export class HistoryService {
         raciais escritos, transformando os gatos de animais de utilidade em animais de companhia 
         e competição — uma mudança cultural que moldou nossa relação com eles até hoje.
       `,
-      image: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=800&q=80',
+      image: 'images/history/arte-cat.jpg',
       imageCaption: 'Cartaz art nouveau de Théophile Steinlen, 1896',
     },
     {
@@ -210,7 +210,7 @@ export class HistoryService {
         em seu personagem Ziggy Stardust, e o musical "Cats" de Andrew Lloyd Webber 
         tornou-se um dos espetáculos mais longos da história da Broadway.
       `,
-      image: 'https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?w=800&q=80',
+      image: 'images/history/cinema-cat.jpg',
       imageCaption: 'Félicette, a primeira gata astronauta, em 1963',
     },
     {
@@ -243,7 +243,7 @@ export class HistoryService {
         os gatos provaram ser muito mais do que animais de estimação: são companheiros 
         permanentes da civilização.
       `,
-      image: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80',
+      image: 'images/history/internet-cat.jpg',
       imageCaption: 'Os gatos dominaram a internet como nenhum outro animal',
     },
   ];

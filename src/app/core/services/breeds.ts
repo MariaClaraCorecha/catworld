@@ -37,7 +37,7 @@ export class BreedsService {
 O focinho achatado (braquicéfalo) é uma característica marcante da raça, mas também causa alguns problemas respiratórios que merecem atenção veterinária regular. Sua pelagem longa e densa exige escovação diária para evitar nós e banhos regulares.
 
 O Persa é um gato de interior por excelência. Não gosta de ambientes barulhentos e prefere a tranquilidade do lar. É extremamente leal ao seu tutor e pode se tornar ansioso se ficar sozinho por longos períodos.`,
-      image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=800&q=80',
+      image: 'images/breeds/persa-cat.jpg',
       characteristics: { energy: 1, affection: 5, grooming: 5, shedding: 4, social: 3 },
       facts: [
         'A rainha Vitória tinha dois persas azuis',
@@ -60,7 +60,7 @@ O Persa é um gato de interior por excelência. Não gosta de ambientes barulhen
 A característica mais marcante do Siamês é sua vocalização — produz sons graves e insistentes que podem parecer choro de bebê. Essa comunicação intensa reflete sua natureza altamente social: o Siamês precisa de atenção constante e sofre com solidão.
 
 Inteligente e curioso, o Siamês aprende truques facilmente e gosta de jogos de inteligência. Suas marcações escuras nas extremidades são resultado de uma mutação genética que afeta a produção de melanina em regiões mais frias do corpo.`,
-      image: 'https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=800&q=80',
+      image: 'images/breeds/siames-cat.jpg',
       characteristics: { energy: 4, affection: 5, grooming: 1, shedding: 2, social: 5 },
       facts: [
         'Os filhotes nascem completamente brancos',
@@ -83,7 +83,7 @@ Inteligente e curioso, o Siamês aprende truques facilmente e gosta de jogos de 
 É o maior gato doméstico do mundo em comprimento — machos podem chegar a 1 metro e pesar até 9 kg. Apesar do tamanho imponente, é conhecido como gentle giant pela personalidade dócil e brincalhona.
 
 Diferente de muitos gatos, o Maine Coon fascina-se por água. Sua pelagem espessa e levemente impermeável é adaptação natural ao clima frio do nordeste americano. Altamente inteligente, aprende comandos e pode ser ensinado a caminhar com coleira.`,
-      image: 'https://images.unsplash.com/photo-1589083130544-0d6a2926e519?w=800&q=80',
+      image: 'images/breeds/mainecoon-cat.jpg',
       characteristics: { energy: 3, affection: 4, grooming: 4, shedding: 4, social: 4 },
       facts: [
         'O recorde mundial de comprimento pertence a um Maine Coon de 1,23 m',
@@ -106,7 +106,7 @@ Diferente de muitos gatos, o Maine Coon fascina-se por água. Sua pelagem espess
 A pelagem do Bengal é única entre os gatos domésticos — as manchas e rosetas têm brilho metálico visível à luz natural. Existem duas variações principais: o Bengal malhado e o marmorizado.
 
 É uma raça extremamente ativa que precisa de muito espaço e estimulação. Adora escalar, caçar e explorar — e tem uma relação peculiar com água. Precisa de brinquedos interativos e sessões de brincadeira diárias.`,
-      image: 'https://images.unsplash.com/photo-1615789591457-74a63395c990?w=800&q=80',
+      image: 'images/breeds/bengal-cat.jpg',
       characteristics: { energy: 5, affection: 3, grooming: 2, shedding: 2, social: 3 },
       facts: [
         'Tem 12,5% de DNA de gato selvagem nas primeiras gerações',
@@ -129,7 +129,7 @@ A pelagem do Bengal é única entre os gatos domésticos — as manchas e roseta
 É um dos maiores gatos domésticos, rival do Maine Coon em tamanho. Machos podem pesar até 9 kg e levam de 3 a 4 anos para atingir o tamanho adulto. Todos os Ragdolls têm olhos azuis — é uma característica genética da raça.
 
 O temperamento do Ragdoll é excepcionalmente dócil — ideal para famílias com crianças pequenas por sua tolerância e paciência. Segue o tutor por toda a casa e gosta de dormir na cama.`,
-      image: 'https://images.unsplash.com/photo-1513245543132-31f507417b26?w=800&q=80',
+      image: 'images/breeds/ragdoll-cat.jpg',
       characteristics: { energy: 2, affection: 5, grooming: 3, shedding: 3, social: 4 },
       facts: [
         'Todos os Ragdolls têm olhos azuis sem exceção',
@@ -152,7 +152,7 @@ O temperamento do Ragdoll é excepcionalmente dócil — ideal para famílias co
 A temperatura corporal do Sphynx é cerca de 4°C mais alta que a de outros gatos, compensando a falta de isolamento térmico. Por isso adoram se aconchegar sob cobertores e contra o corpo do tutor.
 
 São extremamente sociáveis e extrovertidos, se aproximando de qualquer visitante com curiosidade. Precisam de banhos semanais para remover o acúmulo de oleosidade na pele e são vulneráveis ao frio e à exposição solar.`,
-      image: 'https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?w=800&q=80',
+      image: 'images/breeds/phynx-cat.jpg',
       characteristics: { energy: 4, affection: 5, grooming: 5, shedding: 1, social: 5 },
       facts: [
         'Precisa de banho semanal por falta de pelos',
