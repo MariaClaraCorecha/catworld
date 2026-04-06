@@ -1,0 +1,66 @@
+<div class="detail-page" *ngIf="care() as c">
+
+  <div class="detail-hero">
+    <img [src]="c.image" [alt]="c.title" class="detail-hero-img" />
+    <div class="detail-hero-overlay">
+      <div class="detail-hero-content">
+
+        <button mat-button class="back-btn" (click)="goBack()">
+          <mat-icon>arrow_back</mat-icon>
+          Voltar para cuidados
+        </button>
+
+        <mat-chip-set class="detail-chips">
+          <mat-chip color="primary" highlighted>
+            <mat-icon matChipAvatar>{{ c.icon }}</mat-icon>
+            {{ c.category }}
+          </mat-chip>
+        </mat-chip-set>
+
+        <h1 class="detail-title">{{ c.title }}</h1>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-body">
+    <div class="detail-container">
+
+      <p class="detail-summary">{{ c.summary }}</p>
+
+      <mat-divider />
+
+      <div class="detail-content">
+        <p *ngFor="let paragraph of c.content.trim().split('\n\n')">
+          {{ paragraph.trim() }}
+        </p>
+      </div>
+
+      <mat-divider />
+
+      <div class="tips">
+        <h3 class="tips-title">
+          <mat-icon>tips_and_updates</mat-icon>
+          Dicas rápidas
+        </h3>
+        <div class="tips-list">
+          <div class="tip-item" *ngFor="let tip of c.tips">
+            <mat-icon>check_circle</mat-icon>
+            <span>{{ tip }}</span>
+          </div>
+        </div>
+      </div>
+
+      <mat-divider />
+
+      <div class="detail-footer-nav">
+        <button mat-stroked-button color="primary" (click)="goBack()">
+          <mat-icon>arrow_back</mat-icon>
+          Ver todos os cuidados
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</div>

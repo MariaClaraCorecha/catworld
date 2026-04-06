@@ -16,7 +16,10 @@ export const routes: Routes = [
       import('./features/breeds-detail/breeds-detail').then((m) => m.BreedsDetailComponent),
   },
   {
-    path: '**',
-    redirectTo: '',
+    path: 'cuidados/:id',
+    loadComponent: () =>
+      import('./features/care-detail/care-detail').then(
+        (m) => m.CareDetailComponent,
+      ),
   },
 ];
