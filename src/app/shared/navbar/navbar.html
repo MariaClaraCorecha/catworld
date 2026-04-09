@@ -1,7 +1,7 @@
 <mat-toolbar class="navbar" [class.scrolled]="scrolled">
 
-  <!-- Logo -->
-  <button mat-button class="nav-logo" (click)="scrollTo('hero')">
+  
+  <button mat-button class="nav-logo" (click)="goHome()">
     <mat-icon>pets</mat-icon>
     CatWorld
   </button>
@@ -9,12 +9,11 @@
   <span class="nav-spacer"></span>
 
   
-  <!-- Links desktop -->
   <nav class="nav-links">
     <button
       mat-button
       *ngFor="let link of links"
-      (click)="scrollTo(link.id)"
+      (click)="navigateTo(link.id)"
       class="nav-link-btn"
     >
       <mat-icon>{{ link.icon }}</mat-icon>
@@ -24,17 +23,12 @@
 
   <span class="nav-spacer"></span>
 
-  <!-- Botão login desktop -->
-  <button
-    mat-stroked-button
-    color="primary"
-    class="nav-btn-login"
-  >
+
+  <button mat-stroked-button color="primary" class="nav-btn-login">
     <mat-icon>account_circle</mat-icon>
     Entrar com Google
   </button>
 
-  <!-- Botão menu mobile -->
   <button
     mat-icon-button
     class="nav-hamburger"
@@ -46,12 +40,11 @@
 
 </mat-toolbar>
 
-<!-- Menu mobile — dropdown abaixo da toolbar -->
 <div class="nav-mobile" [class.open]="menuOpen">
   <button
     mat-button
     *ngFor="let link of links"
-    (click)="scrollTo(link.id)"
+    (click)="navigateTo(link.id)"
     class="nav-mobile-btn"
   >
     <mat-icon>{{ link.icon }}</mat-icon>
