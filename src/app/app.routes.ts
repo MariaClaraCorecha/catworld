@@ -22,4 +22,11 @@ export const routes: Routes = [
         (m) => m.CareDetailComponent,
       ),
   },
+  {
+    path: 'alimentacao/:id',
+    loadComponent: () =>
+      import('./features/feeding-detail/feeding-detail').then(
+        (m) => m.FeedingDetailComponent,
+      ),
+  },
 ];

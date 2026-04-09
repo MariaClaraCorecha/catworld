@@ -1,1 +1,50 @@
-<p>feeding works!</p>
+<section id="alimentacao" class="section">
+  <div class="container">
+
+    <h2 class="section-title">Alimentação do Gato</h2>
+    <p class="section-sub">
+      Saiba o que seu felino pode e deve comer em cada fase da vida
+    </p>
+
+    <div class="feeding-grid">
+      <mat-card
+        *ngFor="let feeding of feedings"
+        class="feeding-card"
+        matRipple
+        (click)="goToDetail(feeding.id)"
+      >
+        <img mat-card-image
+          [src]="feeding.image"
+          [alt]="feeding.title"
+          loading="lazy"
+        />
+
+        <mat-card-header>
+          <mat-card-title>{{ feeding.title }}</mat-card-title>
+          <mat-card-subtitle>
+            <mat-chip-set>
+              <mat-chip color="primary" highlighted>
+                <mat-icon matChipAvatar>{{ feeding.icon }}</mat-icon>
+                {{ feeding.category }}
+              </mat-chip>
+            </mat-chip-set>
+          </mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p class="feeding-summary">{{ feeding.summary }}</p>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button mat-button color="primary">
+            <mat-icon>menu_book</mat-icon>
+            Saiba mais
+          </button>
+          <mat-icon class="card-arrow">arrow_forward</mat-icon>
+        </mat-card-actions>
+
+      </mat-card>
+    </div>
+
+  </div>
+</section>
