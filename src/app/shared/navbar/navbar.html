@@ -1,6 +1,5 @@
 <mat-toolbar class="navbar" [class.scrolled]="scrolled">
 
-  
   <button mat-button class="nav-logo" (click)="goHome()">
     <mat-icon>pets</mat-icon>
     CatWorld
@@ -8,7 +7,6 @@
 
   <span class="nav-spacer"></span>
 
-  
   <nav class="nav-links">
     <button
       mat-button
@@ -24,10 +22,57 @@
   <span class="nav-spacer"></span>
 
 
-  <button mat-stroked-button color="primary" class="nav-btn-login">
-    <mat-icon>account_circle</mat-icon>
-    Entrar com Google
+  <ng-container *ngIf="!authService.isLoggedIn()">
+    <button
+      *ngIf="!showGoogleBtn"
+      mat-stroked-button
+      color="primary"
+      class="nav-btn-login"
+      (click)="showLoginButton()"
+    >
+      <mat-icon>account_circle</mat-icon>
+      Entrar com Google
+    </button>
+
+  
+    <div
+      *ngIf="showGoogleBtn"
+      #googleBtn
+      class="google-btn-wrapper"
+    ></div>
+  </ng-container>
+
+
+  <button
+    *ngIf="authService.isLoggedIn()"
+    mat-button
+    [matMenuTriggerFor]="userMenu"
+    class="nav-user-btn"
+  >
+    <img
+      [src]="authService.user()?.photoUrl"
+      [alt]="authService.user()?.name"
+      class="user-avatar"
+    />
+    <span class="user-name">{{ authService.user()?.name?.split(' ')?.[0] }}</span>
+    <mat-icon>arrow_drop_down</mat-icon>
   </button>
+
+  <mat-menu #userMenu="matMenu">
+    <div class="user-menu-header">
+      <img [src]="authService.user()?.photoUrl" class="user-menu-avatar" />
+      <div>
+        <p class="user-menu-name">{{ authService.user()?.name }}</p>
+        <p class="user-menu-email">{{ authService.user()?.email }}</p>
+      </div>
+    </div>
+    <mat-divider />
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Sair
+    </button>
+  </mat-menu>
+
 
   <button
     mat-icon-button
@@ -40,6 +85,7 @@
 
 </mat-toolbar>
 
+
 <div class="nav-mobile" [class.open]="menuOpen">
   <button
     mat-button
@@ -51,8 +97,22 @@
     {{ link.label }}
   </button>
 
-  <button mat-stroked-button color="primary" class="nav-mobile-login">
+  <button
+    *ngIf="!authService.isLoggedIn()"
+    mat-stroked-button
+    color="primary"
+    class="nav-mobile-login"
+    (click)="showLoginButton()"
+  >
     <mat-icon>account_circle</mat-icon>
     Entrar com Google
   </button>
+
+  <div *ngIf="authService.isLoggedIn()" class="nav-mobile-user">
+    <img [src]="authService.user()?.photoUrl" class="user-avatar" />
+    <span>{{ authService.user()?.name }}</span>
+    <button mat-icon-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
 </div>

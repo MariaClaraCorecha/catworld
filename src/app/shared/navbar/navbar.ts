@@ -1,11 +1,14 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { filter } from 'rxjs/operators';
+import { AuthService } from '../../core/services/auth';
 
 @Component({
   selector: 'app-navbar',
@@ -16,22 +19,35 @@ import { filter } from 'rxjs/operators';
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
+    MatDividerModule,
+    MatTooltipModule,
   ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+  @ViewChild('googleBtn') googleBtn!: ElementRef;
+
   scrolled = false;
   menuOpen = false;
   isHomePage = true;
+  showGoogleBtn = false;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    public authService: AuthService,
+  ) {
     this.router.events
       .pipe(filter(e => e instanceof NavigationEnd))
       .subscribe((e: any) => {
         this.isHomePage = e.urlAfterRedirects === '/';
         this.menuOpen = false;
       });
+  }
+
+  ngOnInit() {
+
+    this.authService.restoreSession();
   }
 
   @HostListener('window:scroll')
@@ -58,6 +74,21 @@ export class NavbarComponent {
 
   goHome() {
     this.router.navigate(['/']);
+    this.menuOpen = false;
+  }
+
+  showLoginButton() {
+    this.showGoogleBtn = true;
+    
+    setTimeout(() => {
+      if (this.googleBtn?.nativeElement) {
+        this.authService.initialize(this.googleBtn.nativeElement);
+      }
+    }, 100);
+  }
+
+  logout() {
+    this.authService.logout();
     this.menuOpen = false;
   }
 
