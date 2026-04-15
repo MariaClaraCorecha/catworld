@@ -17,7 +17,7 @@ export class AuthService {
   isLoggedIn = signal(false);
 
  
-  private clientId = 'SEU_CLIENT_ID_AQUI.apps.googleusercontent.com';
+  private clientId = '265699889102-0ae236l9u8500a4qnicr19sp0t9l8blq.apps.googleusercontent.com';
 
   initialize(buttonElement: HTMLElement) {
     google.accounts.id.initialize({
