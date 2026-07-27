@@ -29,4 +29,18 @@ export const routes: Routes = [
         (m) => m.FeedingDetailComponent,
       ),
   },
+  {
+    path: 'exercicios/:id',
+    loadComponent: () =>
+      import('./features/exercises-detail/exercises-detail').then(
+        (m) => m.ExercisesDetailComponent,
+      ),
+  },
+  {
+    path: 'curiosidades/:id',
+    loadComponent: () =>
+      import('./features/curiosities-detail/curiosities-detail').then(
+        (m) => m.CuriositiesDetailComponent,
+      ),
+  },
 ];
