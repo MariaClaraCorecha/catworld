@@ -1,0 +1,67 @@
+<div class="detail-page" *ngIf="curiosity() as c">
+
+  <div class="detail-hero">
+    <div class="detail-hero-icon">
+      <mat-icon>{{ c.icon }}</mat-icon>
+    </div>
+    <div class="detail-hero-overlay">
+      <div class="detail-hero-content">
+
+        <button mat-button class="back-btn" (click)="goBack()">
+          <mat-icon>arrow_back</mat-icon>
+          Voltar para curiosidades
+        </button>
+
+        <mat-chip-set class="detail-chips">
+          <mat-chip color="primary" highlighted>
+            {{ c.category }}
+          </mat-chip>
+        </mat-chip-set>
+
+        <h1 class="detail-title">{{ c.title }}</h1>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-body">
+    <div class="detail-container">
+
+      <p class="detail-summary">{{ c.summary }}</p>
+
+      <mat-divider />
+
+      <div class="detail-content">
+        <p *ngFor="let paragraph of c.content.trim().split('\n\n')">
+          {{ paragraph.trim() }}
+        </p>
+      </div>
+
+      <mat-divider />
+
+      <div class="tips">
+        <h3 class="tips-title">
+          <mat-icon>auto_awesome</mat-icon>
+          Você sabia?
+        </h3>
+        <div class="tips-list">
+          <div class="tip-item" *ngFor="let tip of c.tips">
+            <mat-icon>check_circle</mat-icon>
+            <span>{{ tip }}</span>
+          </div>
+        </div>
+      </div>
+
+      <mat-divider />
+
+      <div class="detail-footer-nav">
+        <button mat-stroked-button color="primary" (click)="goBack()">
+          <mat-icon>arrow_back</mat-icon>
+          Ver todos os tópicos
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
