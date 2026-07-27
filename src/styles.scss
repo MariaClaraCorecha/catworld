@@ -48,6 +48,13 @@ body {
 // ─── Utilitários de seção — só layout, zero cor manual ───────────
 .section {
   padding: 5rem 2rem;
+  scroll-margin-top: 64px;
+}
+
+@media (max-width: 599px) {
+  .section {
+    scroll-margin-top: 56px;
+  }
 }
 
 .section:nth-child(even) {

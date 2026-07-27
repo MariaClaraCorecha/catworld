@@ -1,3 +1,62 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  transition: box-shadow 0.3s ease;
+
+  &.scrolled {
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #ad1457;
+
+  mat-icon {
+    color: #f48fb1;
+  }
+}
+
+.nav-spacer {
+  flex: 1 1 auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav-link-btn {
+  display: flex !important;
+  align-items: center;
+  color: #4a4a4a;
+  font-weight: 500;
+  white-space: nowrap;
+
+  &:hover {
+    color: #ad1457;
+  }
+
+  mat-icon {
+    margin-right: 4px;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.nav-btn-login {
+  white-space: nowrap;
+}
+
 .google-btn-wrapper {
   display: flex;
   align-items: center;
@@ -82,6 +141,28 @@
   &.open {
     display: flex;
   }
+}
+
+.nav-mobile-btn,
+.nav-mobile-login {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start !important;
+  gap: 8px;
+  width: 100%;
+  color: #4a4a4a;
+
+  &:hover {
+    color: #ad1457;
+    background: #fce4ec;
+  }
+}
+
+.nav-mobile-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 1rem;
 }
 
 .nav-hamburger {
