@@ -1,0 +1,135 @@
+.detail-page {
+  min-height: 100vh;
+}
+
+.detail-hero {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ab47bc, #6a1b9a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-hero-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  mat-icon {
+    font-size: 180px;
+    width: 180px;
+    height: 180px;
+    color: rgba(255, 255, 255, 0.18);
+  }
+}
+
+.detail-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.1) 0%,
+    rgba(0,0,0,0.55) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+}
+
+.detail-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  width: 100%;
+}
+
+.back-btn {
+  color: rgba(255,255,255,0.85) !important;
+  margin-bottom: 1rem;
+  padding-left: 0 !important;
+}
+
+.detail-chips { margin-bottom: 1rem; }
+
+.detail-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+}
+
+.detail-body {
+  padding: 3rem 2rem 5rem;
+}
+
+.detail-container {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.detail-summary {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.75;
+  border-left: 3px solid #8e24aa;
+  padding-left: 1.25rem;
+  color: #6a1b9a;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  p {
+    font-size: 1rem;
+    line-height: 1.85;
+    text-align: justify;
+  }
+}
+
+.tips-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+
+  mat-icon { color: #8e24aa; }
+}
+
+.tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: #8e24aa;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+}
+
+.detail-footer-nav {
+  display: flex;
+  padding-top: 1rem;
+}
