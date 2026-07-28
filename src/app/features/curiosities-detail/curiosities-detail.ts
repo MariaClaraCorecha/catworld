@@ -36,6 +36,10 @@ export class CuriositiesDetailComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => {
+        document.getElementById('curiosidades')?.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    });
   }
 }

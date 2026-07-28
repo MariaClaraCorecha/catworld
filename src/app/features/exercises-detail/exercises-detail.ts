@@ -36,6 +36,10 @@ export class ExercisesDetailComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => {
+        document.getElementById('exercicios')?.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    });
   }
 }

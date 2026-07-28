@@ -36,6 +36,10 @@ export class FeedingDetailComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => {
+        document.getElementById('alimentacao')?.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    });
   }
 }

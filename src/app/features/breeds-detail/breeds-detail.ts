@@ -38,6 +38,10 @@ export class BreedsDetailComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => {
+        document.getElementById('racas')?.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    });
   }
 }
