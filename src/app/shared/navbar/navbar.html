@@ -40,6 +40,10 @@
       #googleBtn
       class="google-btn-wrapper"
     ></div>
+
+    <span *ngIf="authService.loginError()" class="google-login-error">
+      {{ authService.loginError() }}
+    </span>
   </ng-container>
 
 
