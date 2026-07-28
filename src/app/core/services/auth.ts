@@ -8,6 +8,9 @@ export interface CatUser {
   bio?: string;
   birthDate?: string;
   catName?: string;
+  catColor?: string;
+  catAge?: string;
+  catFur?: string;
 }
 
 
@@ -95,7 +98,11 @@ export class AuthService {
     return JSON.parse(json);
   }
 
-  updateProfile(fields: Partial<Pick<CatUser, 'bio' | 'birthDate' | 'catName'>>) {
+  updateProfile(
+    fields: Partial<
+      Pick<CatUser, 'bio' | 'birthDate' | 'catName' | 'catColor' | 'catAge' | 'catFur'>
+    >,
+  ) {
     const current = this.user();
     if (!current) return;
 

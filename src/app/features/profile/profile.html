@@ -14,11 +14,6 @@
 
     <form [formGroup]="form" class="profile-form" (ngSubmit)="save()">
       <mat-form-field appearance="outline" class="profile-field">
-        <mat-label>Nome do gato</mat-label>
-        <input matInput formControlName="catName" placeholder="Ex: Frajola" />
-      </mat-form-field>
-
-      <mat-form-field appearance="outline" class="profile-field">
         <mat-label>Data de nascimento</mat-label>
         <input matInput type="date" formControlName="birthDate" />
       </mat-form-field>
@@ -31,6 +26,32 @@
           rows="3"
           placeholder="Conte um pouco sobre você"
         ></textarea>
+      </mat-form-field>
+
+      <h2 class="profile-section-title">Sobre o gato</h2>
+
+      <mat-form-field appearance="outline" class="profile-field">
+        <mat-label>Nome do gato</mat-label>
+        <input matInput formControlName="catName" placeholder="Ex: Frajola" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="profile-field">
+        <mat-label>Cor</mat-label>
+        <input matInput formControlName="catColor" placeholder="Ex: Preto e branco" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="profile-field">
+        <mat-label>Idade (anos)</mat-label>
+        <input matInput type="number" min="0" formControlName="catAge" placeholder="Ex: 2" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="profile-field">
+        <mat-label>Pelagem</mat-label>
+        <mat-select formControlName="catFur">
+          <mat-option *ngFor="let option of furOptions" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
 
       <button mat-flat-button color="primary" type="submit" class="profile-save">

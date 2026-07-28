@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { AuthService } from '../../core/services/auth';
 
 @Component({
@@ -20,6 +21,7 @@ import { AuthService } from '../../core/services/auth';
     MatDividerModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
   ],
   templateUrl: './profile.html',
   styleUrl: './profile.scss',
@@ -31,10 +33,15 @@ export class ProfileComponent implements OnInit {
 
   saved = false;
 
+  furOptions = ['Curta', 'Longa', 'Semi longa', 'Sem pelo'];
+
   form = this.fb.group({
     catName: [''],
     birthDate: [''],
     bio: [''],
+    catColor: [''],
+    catAge: [''],
+    catFur: [''],
   });
 
   ngOnInit() {
@@ -48,6 +55,9 @@ export class ProfileComponent implements OnInit {
       catName: user?.catName ?? '',
       birthDate: user?.birthDate ?? '',
       bio: user?.bio ?? '',
+      catColor: user?.catColor ?? '',
+      catAge: user?.catAge ?? '',
+      catFur: user?.catFur ?? '',
     });
   }
 
@@ -56,11 +66,14 @@ export class ProfileComponent implements OnInit {
   }
 
   save() {
-    const { catName, birthDate, bio } = this.form.value;
+    const { catName, birthDate, bio, catColor, catAge, catFur } = this.form.value;
     this.authService.updateProfile({
       catName: catName ?? '',
       birthDate: birthDate ?? '',
       bio: bio ?? '',
+      catColor: catColor ?? '',
+      catAge: catAge ?? '',
+      catFur: catFur ?? '',
     });
     this.saved = true;
     setTimeout(() => (this.saved = false), 2000);
