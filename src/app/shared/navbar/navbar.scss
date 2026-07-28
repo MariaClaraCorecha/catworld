@@ -76,6 +76,12 @@
   border-radius: 20px !important;
   padding: 0 8px !important;
 
+  .mdc-button__label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
   mat-icon {
     font-size: 18px !important;
     width: 18px !important;
@@ -178,5 +184,6 @@
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .nav-btn-login { display: none !important; }
+  .nav-user-btn { display: none !important; }
   .nav-hamburger { display: inline-flex !important; }
 }
