@@ -1,0 +1,94 @@
+.site-footer {
+  background: linear-gradient(135deg, #ad1457, #880e4f);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-brand {
+  max-width: 320px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #fff;
+
+  mat-icon {
+    color: #f48fb1;
+  }
+}
+
+.footer-tagline {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  align-content: flex-start;
+}
+
+.footer-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+
+  &:hover {
+    color: #f48fb1;
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1.25rem 2rem;
+
+  p {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    color: #f48fb1;
+  }
+}
+
+@media (max-width: 599px) {
+  .footer-container {
+    flex-direction: column;
+  }
+}

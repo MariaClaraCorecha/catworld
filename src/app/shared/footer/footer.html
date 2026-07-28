@@ -1,1 +1,27 @@
-<p>footer works!</p>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <button class="footer-logo" (click)="goHome()">
+        <mat-icon>pets</mat-icon>
+        CatWorld
+      </button>
+      <p class="footer-tagline">
+        Conteúdo dedicado ao bem-estar, comportamento e saúde dos gatos.
+      </p>
+    </div>
+
+    <nav class="footer-links">
+      <button *ngFor="let link of links" class="footer-link" (click)="navigateTo(link.id)">
+        {{ link.label }}
+      </button>
+    </nav>
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      © {{ year }} CatWorld — Feito com
+      <mat-icon>favorite</mat-icon>
+      para amantes de gatos.
+    </p>
+  </div>
+</footer>
