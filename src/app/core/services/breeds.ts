@@ -456,6 +456,30 @@ export class BreedsService {
         'Ficou popular por sua semelhança com o gato Garfield',
       ],
     },
+    {
+      id: 'savannah',
+      name: 'Savannah',
+      origin: 'EUA',
+      lifespan: '12–20 anos',
+      weight: '5–11 kg',
+      temperament: 'Enérgico, curioso e leal',
+      summary:
+        'Fruto do cruzamento entre gato doméstico e serval africano, o Savannah é um dos maiores gatos domésticos e tem comportamento que lembra o de um cão.',
+      content: `O Savannah surgiu em 1986 nos Estados Unidos, a partir do cruzamento entre um serval africano — um felino selvagem de médio porte — e um gato doméstico. A raça foi reconhecida pela TICA como experimental em 2001 e alcançou o status de campeã em 2012.
+
+       Savannahs são classificados por geração (F1 a F5 ou mais), indicando a proximidade genética com o serval original: exemplares F1 chegam a ter até 50% de sangue selvagem, sendo os maiores, mais caros e menos previsíveis no temperamento, enquanto gerações mais distantes (F4, F5) são menores e mais parecidas com um gato doméstico comum no comportamento.
+
+       É um dos gatos domésticos mais altos e ágeis que existem, capaz de saltar mais de 2,5 metros de altura a partir do chão parado. Extremamente curioso e ativo, muitos aprendem a andar de guia, buscar objetos e até gostam de água — comportamentos incomuns entre felinos e que lembram bastante um cão.`,
+      icon: 'pets',
+      image: 'images/breeds/savannah.jpg',
+      characteristics: { energy: 5, affection: 4, grooming: 1, shedding: 2, social: 4 },
+      facts: [
+        'Consegue saltar mais de 2,5 metros de altura a partir do chão parado',
+        'Gerações F1 podem ter até 50% de sangue de serval africano',
+        'A posse de gerações iniciais (F1 a F3) é restrita ou proibida em alguns países e estados dos EUA',
+        'Diferente da maioria dos gatos, costuma gostar de brincar com água',
+      ],
+    },
   ];
 
   getAll(): Breed[] {
