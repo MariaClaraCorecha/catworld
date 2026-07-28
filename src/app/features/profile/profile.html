@@ -28,11 +28,34 @@
         ></textarea>
       </mat-form-field>
 
+      <mat-form-field appearance="outline" class="profile-field">
+        <mat-label>Cidade</mat-label>
+        <input matInput formControlName="city" placeholder="Ex: São Paulo" />
+      </mat-form-field>
+
       <h2 class="profile-section-title">Sobre o gato</h2>
 
       <mat-form-field appearance="outline" class="profile-field">
         <mat-label>Nome do gato</mat-label>
         <input matInput formControlName="catName" placeholder="Ex: Frajola" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="profile-field">
+        <mat-label>Raça</mat-label>
+        <mat-select formControlName="catBreed">
+          <mat-option *ngFor="let option of breedOptions" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="profile-field">
+        <mat-label>Gênero</mat-label>
+        <mat-select formControlName="catGender">
+          <mat-option *ngFor="let option of genderOptions" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="profile-field">

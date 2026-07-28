@@ -11,6 +11,9 @@ export interface CatUser {
   catColor?: string;
   catAge?: string;
   catFur?: string;
+  city?: string;
+  catBreed?: string;
+  catGender?: string;
 }
 
 
@@ -100,7 +103,18 @@ export class AuthService {
 
   updateProfile(
     fields: Partial<
-      Pick<CatUser, 'bio' | 'birthDate' | 'catName' | 'catColor' | 'catAge' | 'catFur'>
+      Pick<
+        CatUser,
+        | 'bio'
+        | 'birthDate'
+        | 'catName'
+        | 'catColor'
+        | 'catAge'
+        | 'catFur'
+        | 'city'
+        | 'catBreed'
+        | 'catGender'
+      >
     >,
   ) {
     const current = this.user();
