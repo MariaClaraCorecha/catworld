@@ -5,6 +5,9 @@ export interface CatUser {
   email: string;
   photoUrl: string;
   token: string;
+  bio?: string;
+  birthDate?: string;
+  catName?: string;
 }
 
 
@@ -90,6 +93,15 @@ export class AuthService {
     const base64 = token.split('.')[1];
     const json = atob(base64.replace(/-/g, '+').replace(/_/g, '/'));
     return JSON.parse(json);
+  }
+
+  updateProfile(fields: Partial<Pick<CatUser, 'bio' | 'birthDate' | 'catName'>>) {
+    const current = this.user();
+    if (!current) return;
+
+    const updated = { ...current, ...fields };
+    this.user.set(updated);
+    localStorage.setItem('catworld_user', JSON.stringify(updated));
   }
 
   logout() {
