@@ -5,6 +5,7 @@ export interface Curiosity {
   category: string;
   icon: string;
   title: string;
+  image?: string;
   summary: string;
   content: string;
   tips: string[];
@@ -17,6 +18,7 @@ export class CuriositiesService {
       id: 'ronronar',
       category: 'Comportamento',
       icon: 'graphic_eq',
+      image: 'images/curiosities/gato_ronrona.jpg',
       title: 'Por que os gatos ronronam?',
       summary:
         'O ronronar vai muito além de expressar conforto — envolve uma frequência sonora com possíveis efeitos terapêuticos.',
@@ -39,6 +41,7 @@ export class CuriositiesService {
       id: 'bigodes',
       category: 'Anatomia',
       icon: 'straighten',
+      image: 'images/curiosities/gato_bigode.jpg',
       title: 'A função real dos bigodes',
       summary:
         'Os bigodes do gato são órgãos sensoriais sofisticados, essenciais para orientação espacial e percepção do ambiente.',
@@ -61,6 +64,7 @@ export class CuriositiesService {
       id: 'sono-felino',
       category: 'Comportamento',
       icon: 'bedtime',
+      image: 'images/curiosities/gato_dormindo.jpg',
       title: 'Por que os gatos dormem tanto',
       summary:
         'Gatos passam entre 12 e 16 horas por dia dormindo — um hábito herdado diretamente de seus ancestrais caçadores.',
@@ -83,6 +87,7 @@ export class CuriositiesService {
       id: 'visao-noturna',
       category: 'Anatomia',
       icon: 'visibility',
+      image: 'images/curiosities/gato_visao.jpg',
       title: 'A visão noturna dos gatos',
       summary:
         'Gatos enxergam em condições de pouquíssima luz graças a uma camada refletora única atrás da retina.',
@@ -105,6 +110,7 @@ export class CuriositiesService {
       id: 'paladar-doce',
       category: 'Anatomia',
       icon: 'restaurant',
+      image: 'images/curiosities/gato_comendo.jpg',
       title: 'Gatos não sentem o sabor doce',
       summary:
         'Uma mutação genética faz com que os gatos sejam a única grande família de mamíferos incapaz de detectar o sabor doce.',
@@ -127,6 +133,7 @@ export class CuriositiesService {
       id: 'preferencia-de-pata',
       category: 'Comportamento',
       icon: 'pan_tool',
+      image: 'images/curiosities/gato_andando.jpg',
       title: 'Gatos têm pata dominante',
       summary:
         'Assim como humanos são destros ou canhotos, estudos mostram que gatos também preferem usar uma das patas dianteiras.',

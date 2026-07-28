@@ -13,7 +13,14 @@
         matRipple
         (click)="goToDetail(curiosity.id)"
       >
-        <div class="card-icon-banner">
+        <img
+          *ngIf="curiosity.image"
+          mat-card-image
+          [src]="curiosity.image"
+          [alt]="curiosity.title"
+          loading="lazy"
+        />
+        <div *ngIf="!curiosity.image" class="card-icon-banner">
           <mat-icon>{{ curiosity.icon }}</mat-icon>
         </div>
 

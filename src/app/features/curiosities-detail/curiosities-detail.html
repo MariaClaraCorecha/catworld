@@ -1,7 +1,8 @@
 <div class="detail-page" *ngIf="curiosity() as c">
 
   <div class="detail-hero">
-    <div class="detail-hero-icon">
+    <img *ngIf="c.image" [src]="c.image" [alt]="c.title" class="detail-hero-img" />
+    <div *ngIf="!c.image" class="detail-hero-icon">
       <mat-icon>{{ c.icon }}</mat-icon>
     </div>
     <div class="detail-hero-overlay">
