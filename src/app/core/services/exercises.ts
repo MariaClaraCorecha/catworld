@@ -4,6 +4,7 @@ export interface Exercise {
   id: string;
   category: string;
   icon: string;
+  image?: string;
   title: string;
   summary: string;
   content: string;
@@ -17,6 +18,7 @@ export class ExercisesService {
       id: 'brincadeiras-diarias',
       category: 'Rotina',
       icon: 'sports_esports',
+      image: 'images/exercises/brincadeiras_gatos.jpg',
       title: 'Brincadeiras diárias',
       summary:
         'Sessões curtas de brincadeira todos os dias imitam o ciclo de caça natural do gato e são essenciais para o bem-estar físico e mental.',
@@ -39,6 +41,7 @@ export class ExercisesService {
       id: 'arranhadores',
       category: 'Ambiente',
       icon: 'texture',
+      image: 'images/exercises/arranhadores_gatos.jpg',
       title: 'Arranhadores e escalada',
       summary:
         'Arranhar e escalar são comportamentos naturais que ajudam o gato a se exercitar, marcar território e manter as unhas saudáveis.',
@@ -61,6 +64,7 @@ export class ExercisesService {
       id: 'brinquedos-interativos',
       category: 'Estímulo mental',
       icon: 'toys',
+      image: 'images/exercises/binquedos_gatos.jpg',
       title: 'Brinquedos interativos e enriquecimento',
       summary:
         'Comedouros-quebra-cabeça e brinquedos automáticos mantêm o gato ativo fisicamente e mentalmente estimulado, mesmo quando o tutor não está por perto.',
@@ -83,6 +87,7 @@ export class ExercisesService {
       id: 'sedentarismo-obesidade',
       category: 'Saúde',
       icon: 'monitor_weight',
+      image: 'images/exercises/gato_gordo_sendetarismo.jpg',
       title: 'Sedentarismo e obesidade',
       summary:
         'Gatos de apartamento têm alto risco de sedentarismo. A falta de exercício é uma das principais causas de obesidade e diabetes felina.',
@@ -105,6 +110,7 @@ export class ExercisesService {
       id: 'exercicio-gatos-idosos',
       category: 'Fases da vida',
       icon: 'elderly',
+      image: 'images/exercises/gato_idoso.jpg',
       title: 'Exercício para gatos idosos',
       summary:
         'Gatos idosos continuam precisando de estímulo físico, mas em intensidade e formato adaptados às limitações da idade.',
@@ -127,6 +133,7 @@ export class ExercisesService {
       id: 'gatos-externos-seguranca',
       category: 'Ambiente',
       icon: 'park',
+      image: 'images/exercises/gato_natureza.jpg',
       title: 'Acesso seguro ao ambiente externo',
       summary:
         'Solários (catios) e passeios guiados permitem que o gato exercite o corpo e os sentidos ao ar livre com segurança.',

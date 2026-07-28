@@ -1,7 +1,8 @@
 <div class="detail-page" *ngIf="exercise() as e">
 
   <div class="detail-hero">
-    <div class="detail-hero-icon">
+    <img *ngIf="e.image" [src]="e.image" [alt]="e.title" class="detail-hero-img" />
+    <div *ngIf="!e.image" class="detail-hero-icon">
       <mat-icon>{{ e.icon }}</mat-icon>
     </div>
     <div class="detail-hero-overlay">
