@@ -11,11 +11,16 @@
         matRipple
         (click)="goToDetail(breed.id)"
       >
-        <img mat-card-image
+        <img
+          *ngIf="breed.image"
+          mat-card-image
           [src]="breed.image"
           [alt]="breed.name"
           loading="lazy"
         />
+        <div *ngIf="!breed.image" class="card-icon-banner">
+          <mat-icon>{{ breed.icon }}</mat-icon>
+        </div>
 
         <mat-card-header>
           <mat-card-title>{{ breed.name }}</mat-card-title>

@@ -17,6 +17,21 @@
     margin: 0 !important;
   }
 
+  .card-icon-banner {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ec407a, #ad1457);
+
+    mat-icon {
+      font-size: 64px;
+      width: 64px;
+      height: 64px;
+      color: #fff;
+    }
+  }
+
   mat-card-content {
     flex: 1 !important;
     padding: 0.5rem 1rem 0 !important;

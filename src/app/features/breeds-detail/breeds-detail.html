@@ -1,7 +1,10 @@
 <div class="detail-page" *ngIf="breed() as b">
 
   <div class="detail-hero">
-    <img [src]="b.image" [alt]="b.name" class="detail-hero-img" />
+    <img *ngIf="b.image" [src]="b.image" [alt]="b.name" class="detail-hero-img" />
+    <div *ngIf="!b.image" class="detail-hero-icon">
+      <mat-icon>{{ b.icon }}</mat-icon>
+    </div>
     <div class="detail-hero-overlay">
       <div class="detail-hero-content">
 
