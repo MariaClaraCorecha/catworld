@@ -71,6 +71,10 @@
       </div>
     </div>
     <mat-divider />
+    <button mat-menu-item (click)="goToProfile()">
+      <mat-icon>account_circle</mat-icon>
+      Meu perfil
+    </button>
     <button mat-menu-item (click)="logout()">
       <mat-icon>logout</mat-icon>
       Sair
@@ -113,8 +117,10 @@
   </button>
 
   <div *ngIf="authService.isLoggedIn()" class="nav-mobile-user">
-    <img [src]="authService.user()?.photoUrl" class="user-avatar" />
-    <span>{{ authService.user()?.name }}</span>
+    <button class="nav-mobile-user-info" (click)="goToProfile()">
+      <img [src]="authService.user()?.photoUrl" class="user-avatar" />
+      <span>{{ authService.user()?.name }}</span>
+    </button>
     <button mat-icon-button (click)="logout()">
       <mat-icon>logout</mat-icon>
     </button>
