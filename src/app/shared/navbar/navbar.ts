@@ -77,6 +77,11 @@ export class NavbarComponent implements OnInit {
     this.menuOpen = false;
   }
 
+  goToProfile() {
+    this.router.navigate(['/perfil']);
+    this.menuOpen = false;
+  }
+
   showLoginButton() {
     this.showGoogleBtn = true;
 
