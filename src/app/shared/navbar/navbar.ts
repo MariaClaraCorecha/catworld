@@ -79,12 +79,12 @@ export class NavbarComponent implements OnInit {
 
   showLoginButton() {
     this.showGoogleBtn = true;
-    
+
     setTimeout(() => {
       if (this.googleBtn?.nativeElement) {
         this.authService.initialize(this.googleBtn.nativeElement);
       }
-    }, 100);
+    });
   }
 
   logout() {
