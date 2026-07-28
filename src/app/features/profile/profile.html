@@ -1,0 +1,20 @@
+<div class="profile-page" *ngIf="authService.user() as user">
+  <div class="profile-card">
+    <button mat-button class="back-btn" (click)="goHome()">
+      <mat-icon>arrow_back</mat-icon>
+      Voltar
+    </button>
+
+    <img [src]="user.photoUrl" [alt]="user.name" class="profile-avatar" />
+
+    <h1 class="profile-name">{{ user.name }}</h1>
+    <p class="profile-email">{{ user.email }}</p>
+
+    <mat-divider class="profile-divider" />
+
+    <button mat-stroked-button color="warn" class="profile-logout" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Sair da conta
+    </button>
+  </div>
+</div>
