@@ -82,6 +82,11 @@ export class NavbarComponent implements OnInit {
     this.menuOpen = false;
   }
 
+  goToFeedback() {
+    this.router.navigate(['/feedback']);
+    this.menuOpen = false;
+  }
+
   showLoginButton() {
     this.showGoogleBtn = true;
 

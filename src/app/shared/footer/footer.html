@@ -14,6 +14,7 @@
       <button *ngFor="let link of links" class="footer-link" (click)="navigateTo(link.id)">
         {{ link.label }}
       </button>
+      <button class="footer-link" (click)="goToFeedback()">Feedback</button>
     </nav>
   </div>
 

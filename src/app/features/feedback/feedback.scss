@@ -1,0 +1,78 @@
+.feedback-page {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: #fce4ec;
+}
+
+.feedback-card {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 3rem 2rem 2rem;
+  box-shadow: 0 8px 30px rgba(173, 20, 87, 0.12);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.back-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #ad1457;
+}
+
+.feedback-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #880e4f;
+  margin-bottom: 0.5rem;
+}
+
+.feedback-subtitle {
+  font-size: 0.95rem;
+  color: #ad1457;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.feedback-field {
+  width: 100%;
+}
+
+.feedback-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.feedback-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem 0;
+
+  mat-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    color: #2e7d32;
+  }
+
+  p {
+    color: #4a4a4a;
+    font-size: 0.95rem;
+  }
+}

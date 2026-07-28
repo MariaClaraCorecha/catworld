@@ -1,0 +1,53 @@
+<div class="feedback-page">
+  <div class="feedback-card">
+    <button mat-button class="back-btn" (click)="goHome()">
+      <mat-icon>arrow_back</mat-icon>
+      Voltar
+    </button>
+
+    <h1 class="feedback-title">Fale com a gente</h1>
+    <p class="feedback-subtitle">
+      Encontrou um problema ou tem uma ideia para melhorar o CatWorld? Conte pra gente.
+    </p>
+
+    <form *ngIf="!submitted" [formGroup]="form" class="feedback-form" (ngSubmit)="submit()">
+      <mat-form-field appearance="outline" class="feedback-field">
+        <mat-label>Tipo</mat-label>
+        <mat-select formControlName="type">
+          <mat-option *ngFor="let option of typeOptions" [value]="option.value">
+            {{ option.label }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="feedback-field">
+        <mat-label>Sua mensagem</mat-label>
+        <textarea
+          matInput
+          formControlName="message"
+          rows="5"
+          placeholder="Conte com detalhes o que aconteceu ou o que você gostaria de ver no site"
+        ></textarea>
+      </mat-form-field>
+
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        class="feedback-submit"
+        [disabled]="form.invalid"
+      >
+        <mat-icon>send</mat-icon>
+        Enviar feedback
+      </button>
+    </form>
+
+    <div *ngIf="submitted" class="feedback-success">
+      <mat-icon>check_circle</mat-icon>
+      <p>Obrigado pelo feedback! Ele foi salvo no seu navegador.</p>
+      <button mat-stroked-button color="primary" (click)="sendAnother()">
+        Enviar outro feedback
+      </button>
+    </div>
+  </div>
+</div>
