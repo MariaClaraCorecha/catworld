@@ -43,4 +43,8 @@ export const routes: Routes = [
         (m) => m.CuriositiesDetailComponent,
       ),
   },
+  {
+    path: 'perfil',
+    loadComponent: () => import('./features/profile/profile').then((m) => m.ProfileComponent),
+  },
 ];
