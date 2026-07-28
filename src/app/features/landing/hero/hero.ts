@@ -24,4 +24,8 @@ export class HeroComponent {
     { icon: 'auto_awesome', label: 'Curiosidades' },
     { icon: 'history_edu', label: 'História' },
   ];
+
+  explore() {
+    document.getElementById('racas')?.scrollIntoView({ behavior: 'smooth' });
+  }
 }
