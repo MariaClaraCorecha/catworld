@@ -1,14 +1,14 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { AuthService } from '../../core/services/auth';
+import { AuthService, Cat } from '../../core/services/auth';
 import { BreedsService } from '../../core/services/breeds';
 
 @Component({
@@ -44,16 +44,26 @@ export class ProfileComponent implements OnInit {
   ];
 
   form = this.fb.group({
-    catName: [''],
     birthDate: [''],
     bio: [''],
     city: [''],
-    catColor: [''],
-    catAge: [''],
-    catFur: [''],
-    catBreed: [''],
-    catGender: [''],
+    cats: this.fb.array<FormGroup>([]),
   });
+
+  get cats() {
+    return this.form.get('cats') as FormArray<FormGroup>;
+  }
+
+  private newCatGroup(cat?: Cat) {
+    return this.fb.group({
+      name: [cat?.name ?? ''],
+      breed: [cat?.breed ?? ''],
+      gender: [cat?.gender ?? ''],
+      color: [cat?.color ?? ''],
+      age: [cat?.age ?? ''],
+      fur: [cat?.fur ?? ''],
+    });
+  }
 
   ngOnInit() {
     if (!this.authService.isLoggedIn()) {
@@ -63,16 +73,21 @@ export class ProfileComponent implements OnInit {
 
     const user = this.authService.user();
     this.form.patchValue({
-      catName: user?.catName ?? '',
       birthDate: user?.birthDate ?? '',
       bio: user?.bio ?? '',
       city: user?.city ?? '',
-      catColor: user?.catColor ?? '',
-      catAge: user?.catAge ?? '',
-      catFur: user?.catFur ?? '',
-      catBreed: user?.catBreed ?? '',
-      catGender: user?.catGender ?? '',
     });
+
+    const existingCats = user?.cats?.length ? user.cats : [{}];
+    existingCats.forEach((cat) => this.cats.push(this.newCatGroup(cat)));
+  }
+
+  addCat() {
+    this.cats.push(this.newCatGroup());
+  }
+
+  removeCat(index: number) {
+    this.cats.removeAt(index);
   }
 
   goHome() {
@@ -80,18 +95,12 @@ export class ProfileComponent implements OnInit {
   }
 
   save() {
-    const { catName, birthDate, bio, city, catColor, catAge, catFur, catBreed, catGender } =
-      this.form.value;
+    const { birthDate, bio, city } = this.form.value;
     this.authService.updateProfile({
-      catName: catName ?? '',
       birthDate: birthDate ?? '',
       bio: bio ?? '',
       city: city ?? '',
-      catColor: catColor ?? '',
-      catAge: catAge ?? '',
-      catFur: catFur ?? '',
-      catBreed: catBreed ?? '',
-      catGender: catGender ?? '',
+      cats: this.cats.value,
     });
     this.saved = true;
     setTimeout(() => (this.saved = false), 2000);

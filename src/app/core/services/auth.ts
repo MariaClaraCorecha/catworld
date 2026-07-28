@@ -1,5 +1,14 @@
 import { Injectable, signal } from '@angular/core';
 
+export interface Cat {
+  name?: string;
+  breed?: string;
+  gender?: string;
+  color?: string;
+  age?: string;
+  fur?: string;
+}
+
 export interface CatUser {
   name: string;
   email: string;
@@ -7,13 +16,8 @@ export interface CatUser {
   token: string;
   bio?: string;
   birthDate?: string;
-  catName?: string;
-  catColor?: string;
-  catAge?: string;
-  catFur?: string;
   city?: string;
-  catBreed?: string;
-  catGender?: string;
+  cats?: Cat[];
 }
 
 
@@ -101,22 +105,7 @@ export class AuthService {
     return JSON.parse(json);
   }
 
-  updateProfile(
-    fields: Partial<
-      Pick<
-        CatUser,
-        | 'bio'
-        | 'birthDate'
-        | 'catName'
-        | 'catColor'
-        | 'catAge'
-        | 'catFur'
-        | 'city'
-        | 'catBreed'
-        | 'catGender'
-      >
-    >,
-  ) {
+  updateProfile(fields: Partial<Pick<CatUser, 'bio' | 'birthDate' | 'city' | 'cats'>>) {
     const current = this.user();
     if (!current) return;
 
