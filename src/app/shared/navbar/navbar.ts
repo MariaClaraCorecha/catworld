@@ -9,6 +9,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { filter } from 'rxjs/operators';
 import { AuthService } from '../../core/services/auth';
+import { scrollToSection } from '../../core/utils/scroll-to-section';
 
 @Component({
   selector: 'app-navbar',
@@ -61,13 +62,11 @@ export class NavbarComponent implements OnInit {
 
   navigateTo(sectionId: string) {
     if (this.isHomePage) {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      scrollToSection(sectionId);
       this.menuOpen = false;
     } else {
       this.router.navigate(['/']).then(() => {
-        setTimeout(() => {
-          document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-        }, 300);
+        setTimeout(() => scrollToSection(sectionId), 300);
       });
     }
   }

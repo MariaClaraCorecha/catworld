@@ -7,6 +7,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { BreedsService, Breed } from '../../core/services/breeds';
+import { scrollToSection } from '../../core/utils/scroll-to-section';
 
 @Component({
   selector: 'app-breeds-detail',
@@ -39,9 +40,7 @@ export class BreedsDetailComponent implements OnInit {
 
   goBack() {
     this.router.navigate(['/']).then(() => {
-      setTimeout(() => {
-        document.getElementById('racas')?.scrollIntoView({ behavior: 'smooth' });
-      }, 300);
+      setTimeout(() => scrollToSection('racas'), 300);
     });
   }
 }

@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 import { FeedingService, Feeding } from '../../core/services/feeding';
+import { scrollToSection } from '../../core/utils/scroll-to-section';
 
 @Component({
   selector: 'app-feeding-detail',
@@ -37,9 +38,7 @@ export class FeedingDetailComponent implements OnInit {
 
   goBack() {
     this.router.navigate(['/']).then(() => {
-      setTimeout(() => {
-        document.getElementById('alimentacao')?.scrollIntoView({ behavior: 'smooth' });
-      }, 300);
+      setTimeout(() => scrollToSection('alimentacao'), 300);
     });
   }
 }

@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 import { HistoryService, HistoryCard } from '../../core/services/history';
+import { scrollToSection } from '../../core/utils/scroll-to-section';
 
 @Component({
   selector: 'app-history-detail',
@@ -31,9 +32,7 @@ export class HistoryDetailComponent implements OnInit {
 
   goBack() {
     this.router.navigate(['/']).then(() => {
-      setTimeout(() => {
-        document.getElementById('historia')?.scrollIntoView({ behavior: 'smooth' });
-      }, 300);
+      setTimeout(() => scrollToSection('historia'), 300);
     });
   }
 }

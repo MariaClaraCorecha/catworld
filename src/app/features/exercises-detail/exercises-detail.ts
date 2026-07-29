@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 import { ExercisesService, Exercise } from '../../core/services/exercises';
+import { scrollToSection } from '../../core/utils/scroll-to-section';
 
 @Component({
   selector: 'app-exercises-detail',
@@ -37,9 +38,7 @@ export class ExercisesDetailComponent implements OnInit {
 
   goBack() {
     this.router.navigate(['/']).then(() => {
-      setTimeout(() => {
-        document.getElementById('exercicios')?.scrollIntoView({ behavior: 'smooth' });
-      }, 300);
+      setTimeout(() => scrollToSection('exercicios'), 300);
     });
   }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { scrollToSection } from '../../core/utils/scroll-to-section';
 
 @Component({
   selector: 'app-footer',
@@ -26,12 +27,10 @@ export class Footer {
 
   navigateTo(sectionId: string) {
     if (this.router.url === '/') {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      scrollToSection(sectionId);
     } else {
       this.router.navigate(['/']).then(() => {
-        setTimeout(() => {
-          document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-        }, 300);
+        setTimeout(() => scrollToSection(sectionId), 300);
       });
     }
   }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
+import { scrollToSection } from '../../../core/utils/scroll-to-section';
 
 @Component({
   selector: 'app-hero',
@@ -26,6 +27,6 @@ export class HeroComponent {
   ];
 
   explore() {
-    document.getElementById('racas')?.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection('racas');
   }
 }

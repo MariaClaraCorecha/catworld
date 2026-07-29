@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 import { CuriositiesService, Curiosity } from '../../core/services/curiosities';
+import { scrollToSection } from '../../core/utils/scroll-to-section';
 
 @Component({
   selector: 'app-curiosities-detail',
@@ -37,9 +38,7 @@ export class CuriositiesDetailComponent implements OnInit {
 
   goBack() {
     this.router.navigate(['/']).then(() => {
-      setTimeout(() => {
-        document.getElementById('curiosidades')?.scrollIntoView({ behavior: 'smooth' });
-      }, 300);
+      setTimeout(() => scrollToSection('curiosidades'), 300);
     });
   }
 }
