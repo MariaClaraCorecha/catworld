@@ -23,6 +23,7 @@ export class HeroComponent {
     { icon: 'medical_services', label: 'Cuidados' },
     { icon: 'restaurant', label: 'Alimentação' },
     { icon: 'directions_run', label: 'Exercícios' },
+    { icon: 'local_hospital', label: 'Doenças' },
     { icon: 'auto_awesome', label: 'Curiosidades' },
   ];
 
