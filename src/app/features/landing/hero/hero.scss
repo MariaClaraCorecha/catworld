@@ -57,6 +57,14 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
+
+  mat-chip {
+    cursor: pointer;
+
+    &:hover {
+      background: #f8bbd0 !important; // pink-100
+    }
+  }
 }
 
 .hero-cta {
