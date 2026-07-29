@@ -10,7 +10,7 @@
     <p class="hero-subtitle">{{ subtitle }}</p>
 
     <mat-chip-set class="hero-topics">
-      <mat-chip *ngFor="let topic of topics">
+      <mat-chip *ngFor="let topic of topics" (click)="goToTopic(topic.id)">
         <mat-icon matChipAvatar>{{ topic.icon }}</mat-icon>
         {{ topic.label }}
       </mat-chip>
