@@ -7,7 +7,8 @@ export interface HistoryCard {
   title: string;
   summary: string; // texto curto para o card
   content: string; // texto longo para a página de detalhe
-  image: string;
+  image?: string;
+  icon?: string;
   imageCaption?: string;
 }
 
@@ -34,12 +35,59 @@ export class HistoryService {
         com o mesmo cuidado reservado à realeza, envoltos em linho e enterrados em sarcófagos de bronze ou madeira 
         junto com ratinhos mumificados para o além.
 
-        Estima-se que mais de 300 mil gatos mumificados foram encontrados em necrópoles egípcias. A cidade de Bubástis 
-        era o principal centro de culto à Bastet, atraindo peregrinos de todo o Egito para o grande festival anual 
+        Estima-se que mais de 300 mil gatos mumificados foram encontrados em necrópoles egípcias. A cidade de Bubástis
+        era o principal centro de culto à Bastet, atraindo peregrinos de todo o Egito para o grande festival anual
         em honra da deusa, descrito pelo historiador grego Heródoto como a celebração mais animada do país.
+
+        Bastet não era a única divindade felina do panteão egípcio. Mafdet, uma das mais antigas — cultuada já na
+        Primeira Dinastia, por volta de 3.000 a.C. — era representada como uma mulher com cabeça de gato ou
+        genuína felina, protetora contra escorpiões e serpentes venenosas e associada à justiça executada contra
+        criminosos. Sekhmet, por sua vez, era a face guerreira e vingativa da mesma energia divina: uma leoa
+        feroz enviada por Rá para punir a humanidade, que só se acalmou depois de ser enganada com cerveja
+        tingida de vermelho para parecer sangue. Bastet, mais tarde, passou a representar justamente o
+        contraponto pacífico de Sekhmet — a proteção gentil do lar em vez da destruição.
+
+        O respeito egípcio pelos gatos sagrados teve até consequências militares. Segundo o historiador Políeno,
+        na Batalha de Pelúsio, em 525 a.C., o rei persa Cambises II teria ordenado que seus soldados pintassem
+        imagens de Bastet em seus escudos e levassem gatos à frente das tropas, sabendo que os egípcios
+        recusariam atacar por medo de ferir os animais sagrados. A cidade caiu sem grande resistência,
+        e o Egito passou ao domínio persa — um dos raros casos na história em que a devoção religiosa
+        a um animal teria decidido o destino de uma guerra.
       `,
       image: 'images/history/egito-cat.jpg',
       imageCaption: 'Representação de Bastet, a deusa egípcia com cabeça de gato',
+    },
+    {
+      id: 'china-antiga',
+      period: 'China Antiga',
+      year: '1.100 a.C.',
+      title: 'Li Shou, o deus-gato dos grãos',
+      summary:
+        'Na China antiga, o deus-gato Li Shou era cultuado pelos agricultores por proteger as plantações contra roedores.',
+      icon: 'grass',
+      image: 'images/history/gatochina.jpg',
+      content: `
+        Muito antes de os gatos serem domesticados como companhia, os agricultores chineses já lhes prestavam
+        homenagem religiosa por um motivo bem prático: a proteção das colheitas. O "Livro dos Ritos" (Li Ji),
+        um dos textos clássicos confucionistas compilados por volta do século XI a.C., menciona cerimônias
+        anuais em honra a Li Shou, o deus-gato responsável por afastar os ratos que ameaçavam os celeiros
+        de arroz e trigo.
+
+        Ao final de cada colheita, os camponeses realizavam rituais de agradecimento a oito divindades
+        agrícolas, entre elas Li Shou, oferecendo comida e queimando incensos para garantir que os gatos
+        — e o deus que eles representavam — continuassem protegendo os grãos armazenados no ano seguinte.
+        Diferentemente do culto egípcio, centrado em templos e sacerdotes, a veneração a Li Shou era
+        essencialmente uma tradição rural, próxima da vida cotidiana dos agricultores.
+
+        Com o tempo, a figura de Li Shou se misturou a outras crenças populares chinesas sobre gatos,
+        como a ideia de que eles podiam prever terremotos e mudanças de tempo através de seu comportamento,
+        e de que suas pupilas funcionavam como um relógio natural, dilatando e contraindo conforme a
+        posição do sol ao longo do dia.
+
+        Essa reverência utilitária ecoa séculos depois na cultura popular chinesa e influenciou crenças
+        semelhantes em toda a Ásia, incluindo o respeito que os gatos receberiam mais tarde nos mosteiros
+        budistas do Japão, onde protegiam os manuscritos sagrados contra roedores.
+      `,
     },
     {
       id: 'grecia-roma',
@@ -123,6 +171,39 @@ export class HistoryService {
       `,
       image: 'images/history/manekineko.jpg',
       imageCaption: 'Maneki-neko tradicional — o gato da sorte japonês',
+    },
+    {
+      id: 'mitologia-nordica',
+      period: 'Mitologia Nórdica',
+      year: '800 d.C.',
+      title: 'Freyja e os gatos sagrados',
+      summary:
+        'Na mitologia nórdica, a deusa Freyja viajava em uma carruagem puxada por dois grandes gatos cinzentos, presente de Thor.',
+      icon: 'castle',
+      image: 'images/history/Freyjagatos.jpg',
+      content: `
+        Enquanto o Japão reverenciava seus gatos nos templos budistas, os povos nórdicos os associavam a
+        uma das divindades mais importantes de seu panteão: Freyja, deusa do amor, da fertilidade, da magia
+        e também da guerra. Segundo os mitos registrados na "Edda em Prosa" de Snorri Sturluson, no século XIII,
+        Freyja viajava por céu e terra em uma carruagem puxada por dois grandes gatos cinzentos, um presente
+        do próprio Thor.
+
+        Esses gatos, chamados de "gatos de Freyja", eram provavelmente inspirados nos robustos gatos
+        selvagens do norte da Europa — muito maiores e mais peludos que os gatos domésticos comuns,
+        adaptados ao frio escandinavo. Acredita-se que essa tradição mitológica esteja diretamente ligada
+        à origem do gato-da-floresta-norueguês (Skogkatt), uma raça reconhecida por seu porte grande e
+        pelagem dupla resistente ao inverno.
+
+        Os fazendeiros vikings deixavam leite para os gatos que rondavam suas propriedades como forma de
+        agradar Freyja e garantir boas colheitas e casamentos prósperos — presentear a deusa através de
+        seus animais sagrados era considerado um ato de boa sorte. Casar-se sob o signo de Freyja incluía,
+        em algumas tradições, o costume de presentear a noiva com um gatinho.
+
+        A ligação entre Freyja e os gatos também explica, em parte, por que os felinos eram comuns a bordo
+        dos navios vikings muito antes das grandes navegações europeias: além de controlar roedores nas
+        embarcações de madeira, eram vistos como portadores da proteção e da sorte da deusa durante as
+        travessias marítimas.
+      `,
     },
     {
       id: 'navegacoes',
