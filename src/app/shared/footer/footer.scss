@@ -64,6 +64,44 @@
   }
 }
 
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-contact-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.footer-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    color: #f48fb1;
+  }
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.footer-github-icon {
+  flex-shrink: 0;
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding: 1.25rem 2rem;

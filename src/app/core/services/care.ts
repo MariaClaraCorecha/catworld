@@ -13,14 +13,14 @@ export interface Care {
 
 @Injectable({ providedIn: 'root' })
 export class CareService {
-
   private cares: Care[] = [
     {
       id: 'higiene',
       category: 'Higiene',
       icon: 'clean_hands',
       title: 'Higiene e limpeza',
-      summary: 'Manter a higiene do seu gato é essencial para sua saúde e bem-estar. Escovação, banho e limpeza de ouvidos fazem parte da rotina.',
+      summary:
+        'Manter a higiene do seu gato é essencial para sua saúde e bem-estar. Escovação, banho e limpeza de ouvidos fazem parte da rotina.',
       content: `A higiene do gato começa pela escovação regular da pelagem. Gatos de pelo longo como o Persa precisam ser escovados diariamente para evitar nós e bolos de pelo. Já os de pelo curto podem ser escovados uma ou duas vezes por semana.
 
      O banho em gatos não é necessário com frequência — a maioria se limpa sozinha eficientemente. No entanto, algumas situações exigem banho: gatos que se sujaram muito, raças sem pelo como o Sphynx que acumula oleosidade na pele, ou gatos idosos que perdem a capacidade de se auto-limpar.
@@ -35,15 +35,16 @@ export class CareService {
         'Limpe os ouvidos mensalmente com solução própria',
         'Apare as unhas a cada 2 a 3 semanas',
         'Escove os dentes diariamente para evitar tártaro',
-        'Use sempre produtos específicos para gatos'
-      ]
+        'Use sempre produtos específicos para gatos',
+      ],
     },
     {
       id: 'saude',
       category: 'Saúde',
       icon: 'vaccines',
       title: 'Vacinas e vermifugação',
-      summary: 'Manter o calendário vacinal e a vermifugação em dia é a base da saúde preventiva do seu gato.',
+      summary:
+        'Manter o calendário vacinal e a vermifugação em dia é a base da saúde preventiva do seu gato.',
       content: `As vacinas são a principal ferramenta de prevenção de doenças graves em gatos. A vacina V4 ou V5 protege contra rinotraqueíte, calicivirose, panleucopenia e, em algumas versões, clamidiose — doenças respiratórias e intestinais graves. A primeira dose deve ser aplicada entre 6 e 8 semanas de vida, com reforços anuais.
 
       O protocolo completo normalmente segue três doses: a primeira entre 6 e 8 semanas, a segunda entre 10 e 12 semanas e a terceira entre 14 e 16 semanas, sempre com intervalo mínimo de 3 a 4 semanas entre elas. Esse escalonamento existe porque os anticorpos maternos, presentes no leite da mãe, podem neutralizar a vacina se aplicada cedo demais — por isso pular doses ou atrasar o calendário reduz a proteção do filhote.
@@ -64,15 +65,16 @@ export class CareService {
         'Considere a vacina de leucemia felina (FeLV) se o gato tiver acesso à rua',
         'Reforce a vacina antirrábica anualmente',
         'Vermifugue a cada 3 meses em adultos',
-        'Observe o gato nas 48h após a vacina e procure o vet se notar inchaço persistente'
-      ]
+        'Observe o gato nas 48h após a vacina e procure o vet se notar inchaço persistente',
+      ],
     },
     {
       id: 'castracao',
       category: 'Saúde',
       icon: 'medical_services',
       title: 'Castração',
-      summary: 'A castração é o procedimento mais importante para a saúde e qualidade de vida do seu gato, trazendo benefícios físicos e comportamentais.',
+      summary:
+        'A castração é o procedimento mais importante para a saúde e qualidade de vida do seu gato, trazendo benefícios físicos e comportamentais.',
       content: `A castração é recomendada por todos os médicos veterinários e é considerada um ato de responsabilidade do tutor. No macho, elimina o comportamento de marcação de território com urina, reduz a agressividade e o instinto de fugir em busca de fêmeas — o que reduz drasticamente acidentes e brigas.
 
        Em fêmeas, a castração elimina o cio — período em que a gata vocaliza intensamente, fica agitada e pode tentar escapar. Mais importante, reduz em até 90% o risco de tumores mamários se realizada antes do primeiro cio, e elimina completamente o risco de piometra, infecção uterina grave e potencialmente fatal.
@@ -94,15 +96,16 @@ export class CareService {
         'Faça exames pré-anestésicos e respeite o jejum antes da cirurgia',
         'Use colar elizabetano e mantenha repouso no pós-operatório',
         'Ajuste a alimentação após a cirurgia',
-        'Pesquise campanhas municipais de castração gratuita, como o castramóvel'
-      ]
+        'Pesquise campanhas municipais de castração gratuita, como o castramóvel',
+      ],
     },
     {
       id: 'ambiente',
       category: 'Bem-estar',
       icon: 'home',
       title: 'Ambiente e bem-estar',
-      summary: 'Um ambiente enriquecido é tão importante quanto alimentação e saúde para a qualidade de vida do seu gato.',
+      summary:
+        'Um ambiente enriquecido é tão importante quanto alimentação e saúde para a qualidade de vida do seu gato.',
       content: `Gatos são animais territoriais que precisam de um ambiente seguro, estimulante e previsível. A falta de enriquecimento ambiental é uma das principais causas de estresse, ansiedade e comportamentos destrutivos em gatos domésticos.
 
      Arranhadores são essenciais — gatos precisam arranhar para marcar território, fazer exercício e manter as unhas saudáveis. Oferecer arranhadores adequados protege seus móveis e satisfaz uma necessidade natural do animal.
@@ -118,15 +121,16 @@ export class CareService {
         'Crie locais elevados para o gato se sentir seguro',
         'Limpe a caixa de areia diariamente',
         'Instale telas de proteção nas janelas',
-        'Mantenha rotina estável — gatos odeiam imprevisibilidade'
-      ]
+        'Mantenha rotina estável — gatos odeiam imprevisibilidade',
+      ],
     },
     {
       id: 'veterinario',
       category: 'Saúde',
       icon: 'local_hospital',
       title: 'Visitas ao veterinário',
-      summary: 'Consultas regulares ao veterinário permitem detectar problemas precocemente e manter o gato saudável por mais tempo.',
+      summary:
+        'Consultas regulares ao veterinário permitem detectar problemas precocemente e manter o gato saudável por mais tempo.',
       content: `A consulta veterinária de rotina deve ser feita pelo menos uma vez ao ano em gatos adultos saudáveis e a cada 6 meses em gatos com mais de 7 anos — considerados idosos na medicina veterinária. Filhotes precisam de visitas mais frequentes para completar o calendário vacinal.
 
      Durante a consulta de rotina, o veterinário avalia peso, condição corporal, dentes, ouvidos, olhos, pelagem, coração e abdômen. Exames de sangue anuais a partir dos 7 anos são recomendados para detectar precocemente doenças renais, hepáticas e tireoidianas — muito comuns em gatos idosos.
@@ -140,15 +144,16 @@ export class CareService {
         'Exames de sangue anuais a partir dos 7 anos',
         'Observe mudanças sutis de comportamento',
         'Tenha sempre um veterinário de emergência de referência',
-        'Acostume o gato ao transporte desde filhote'
-      ]
+        'Acostume o gato ao transporte desde filhote',
+      ],
     },
     {
       id: 'envenenamento',
       category: 'Saúde',
       icon: 'warning',
       title: 'Envenenamento e intoxicações',
-      summary: 'Gatos são curiosos por natureza, o que os expõe a plantas, alimentos e produtos domésticos que podem ser fatais. Saber reconhecer e agir rápido salva vidas.',
+      summary:
+        'Gatos são curiosos por natureza, o que os expõe a plantas, alimentos e produtos domésticos que podem ser fatais. Saber reconhecer e agir rápido salva vidas.',
       content: `Gatos exploram o ambiente com a boca, o que os torna especialmente vulneráveis a intoxicações por plantas, alimentos, medicamentos e produtos de limpeza comuns em qualquer casa. Muitos tutores não sabem que itens do dia a dia podem ser letais para um felino em quantidades mínimas.
 
       Entre as plantas, o lírio (Lilium) é uma das mais perigosas — todas as suas partes, incluindo o pólen e a água do vaso, podem causar insuficiência renal fatal em gatos mesmo em pequena exposição. Comigo-ninguém-pode, espada-de-são-jorge e azaleia também são tóxicas e devem ficar fora do alcance ou fora de casa.
@@ -174,15 +179,16 @@ export class CareService {
         'Nunca induza vômito nem dê remédios caseiros como leite, sal ou óleo',
         'Carvão ativado só deve ser aplicado por um veterinário — nunca em casa',
         'Ligue para o veterinário ou o CIATox do seu estado e leve a embalagem do produto suspeito',
-        'Salve com antecedência o contato de uma clínica veterinária de emergência 24h'
-      ]
+        'Salve com antecedência o contato de uma clínica veterinária de emergência 24h',
+      ],
     },
     {
       id: 'estresse',
       category: 'Bem-estar',
       icon: 'self_improvement',
       title: 'Sinais de estresse',
-      summary: 'Reconhecer os sinais de estresse no seu gato é fundamental para agir antes que o problema se torne sério.',
+      summary:
+        'Reconhecer os sinais de estresse no seu gato é fundamental para agir antes que o problema se torne sério.',
       content: `O estresse em gatos se manifesta de formas variadas e muitas vezes sutis. Os sinais mais comuns incluem esconder-se excessivamente, parar de usar a caixa de areia, arranhar móveis de forma compulsiva, vocalização excessiva, agressividade repentina e supergrooming — lamber tanto que causa peladas.
 
      As causas mais frequentes de estresse felino são mudanças no ambiente — como mudança de casa ou rearranjo de móveis — chegada de novos animais ou pessoas, rotina imprevisível, falta de estimulação mental e barulhos altos e constantes.
@@ -196,8 +202,8 @@ export class CareService {
         'Mantenha rotina de alimentação e brincadeiras',
         'Introduza novos animais de forma gradual',
         'Use difusores de feromona em situações de estresse',
-        'Crie zonas de refúgio onde o gato não seja perturbado'
-      ]
+        'Crie zonas de refúgio onde o gato não seja perturbado',
+      ],
     },
   ];
 
@@ -206,6 +212,6 @@ export class CareService {
   }
 
   getById(id: string): Care | undefined {
-    return this.cares.find(c => c.id === id);
+    return this.cares.find((c) => c.id === id);
   }
 }

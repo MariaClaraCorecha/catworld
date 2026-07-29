@@ -23,6 +23,9 @@ export class Footer {
     { label: 'História', id: 'historia' },
   ];
 
+  contactEmail = 'mariaclaracorecha5@gmail.com';
+  githubUrl = 'https://github.com/MariaClaraCorecha';
+
   constructor(private router: Router) {}
 
   navigateTo(sectionId: string) {
@@ -37,9 +40,5 @@ export class Footer {
 
   goHome() {
     this.router.navigate(['/']);
-  }
-
-  goToFeedback() {
-    this.router.navigate(['/feedback']);
   }
 }
