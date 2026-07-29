@@ -37,6 +37,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'doencas/:id',
+    loadComponent: () =>
+      import('./features/diseases-detail/diseases-detail').then(
+        (m) => m.DiseasesDetailComponent,
+      ),
+  },
+  {
     path: 'curiosidades/:id',
     loadComponent: () =>
       import('./features/curiosities-detail/curiosities-detail').then(
