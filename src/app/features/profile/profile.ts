@@ -35,6 +35,7 @@ export class ProfileComponent implements OnInit {
 
   saved = false;
   avatarError = false;
+  editing = false;
 
   furOptions = ['Curta', 'Longa', 'Semi longa', 'Sem pelo'];
   genderOptions = ['Macho', 'Fêmea'];
@@ -81,6 +82,40 @@ export class ProfileComponent implements OnInit {
 
     const existingCats = user?.cats?.length ? user.cats : [{}];
     existingCats.forEach((cat) => this.cats.push(this.newCatGroup(cat)));
+
+    this.editing = !this.hasProfileData;
+  }
+
+  get hasProfileData(): boolean {
+    const user = this.authService.user();
+    return !!(user?.bio || user?.city || user?.birthDate || user?.cats?.some((cat) => cat.name));
+  }
+
+  get filledCats(): Cat[] {
+    return (this.authService.user()?.cats ?? []).filter((cat) => cat.name);
+  }
+
+  breedImage(breedName?: string): string | undefined {
+    if (!breedName) return undefined;
+    return this.breedsService.getAll().find((b) => b.name === breedName)?.image;
+  }
+
+  formattedBirthDate(dateStr?: string): string {
+    if (!dateStr) return '';
+    const date = new Date(`${dateStr}T00:00:00`);
+    return new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }).format(date);
+  }
+
+  age(dateStr?: string): number | null {
+    if (!dateStr) return null;
+    const birth = new Date(`${dateStr}T00:00:00`);
+    const today = new Date();
+    let age = today.getFullYear() - birth.getFullYear();
+    const beforeBirthday =
+      today.getMonth() < birth.getMonth() ||
+      (today.getMonth() === birth.getMonth() && today.getDate() < birth.getDate());
+    if (beforeBirthday) age--;
+    return age;
   }
 
   addCat() {
@@ -95,6 +130,14 @@ export class ProfileComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  startEditing() {
+    this.editing = true;
+  }
+
+  cancelEdit() {
+    if (this.hasProfileData) this.editing = false;
+  }
+
   save() {
     const { birthDate, bio, city } = this.form.value;
     this.authService.updateProfile({
@@ -104,6 +147,7 @@ export class ProfileComponent implements OnInit {
       cats: this.cats.value,
     });
     this.saved = true;
+    this.editing = false;
     setTimeout(() => (this.saved = false), 2000);
   }
 
