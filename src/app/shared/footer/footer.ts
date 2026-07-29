@@ -16,11 +16,11 @@ export class Footer {
 
   links = [
     { label: 'Raças', id: 'racas' },
+    { label: 'História', id: 'historia' },
     { label: 'Cuidados', id: 'cuidados' },
     { label: 'Alimentação', id: 'alimentacao' },
     { label: 'Exercícios', id: 'exercicios' },
     { label: 'Curiosidades', id: 'curiosidades' },
-    { label: 'História', id: 'historia' },
   ];
 
   contactEmail = 'mariaclaracorecha5@gmail.com';
