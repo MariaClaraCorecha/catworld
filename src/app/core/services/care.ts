@@ -46,18 +46,25 @@ export class CareService {
       summary: 'Manter o calendário vacinal e a vermifugação em dia é a base da saúde preventiva do seu gato.',
       content: `As vacinas são a principal ferramenta de prevenção de doenças graves em gatos. A vacina V4 ou V5 protege contra rinotraqueíte, calicivirose, panleucopenia e, em algumas versões, clamidiose — doenças respiratórias e intestinais graves. A primeira dose deve ser aplicada entre 6 e 8 semanas de vida, com reforços anuais.
 
+      O protocolo completo normalmente segue três doses: a primeira entre 6 e 8 semanas, a segunda entre 10 e 12 semanas e a terceira entre 14 e 16 semanas, sempre com intervalo mínimo de 3 a 4 semanas entre elas. Esse escalonamento existe porque os anticorpos maternos, presentes no leite da mãe, podem neutralizar a vacina se aplicada cedo demais — por isso pular doses ou atrasar o calendário reduz a proteção do filhote.
+
+      A vacina contra leucemia felina (FeLV) é recomendada principalmente para gatos com acesso à rua ou contato com animais de origem desconhecida, já que o vírus se transmite pela saliva, em brigas e no compartilhamento de comedouros. Gatos estritamente domésticos e sem contato com outros animais têm risco bem menor e podem dispensá-la após avaliação do veterinário.
+
       A vacina antirrábica é obrigatória em muitos municípios brasileiros e deve ser aplicada a partir dos 3 meses de idade, com reforço anual. Mesmo gatos que não saem de casa devem ser vacinados, pois o vírus pode ser trazido para dentro do ambiente pelo tutor.
+
+      É normal que o gato fique um pouco apático, com febre leve ou sem apetite nas primeiras 24 a 48 horas após a vacina — é apenas o sistema imunológico respondendo. Já inchaço no local que persiste por mais de duas semanas, vômitos, dificuldade para respirar ou inchaço no rosto exigem atendimento veterinário imediato, pois podem indicar reação alérgica.
 
       A vermifugação deve ser feita a cada 3 meses em gatos adultos e mensalmente em filhotes até os 6 meses. Existem vermífugos em pasta, comprimido e pipeta. Converse com o veterinário sobre o produto mais adequado para o seu animal.
 
       O controle de pulgas e carrapatos também é essencial — esses parasitas podem transmitir doenças graves e causar anemia em filhotes. Antipulgas em pipeta ou coleira são as formas mais práticas de prevenção.`,
       image: 'images/care/vacina.jpg',
       tips: [
-        'Vacine com V4 ou V5 a partir de 6 a 8 semanas',
+        'Vacine com V4 ou V5 a partir de 6 a 8 semanas, em 3 doses',
+        'Respeite o intervalo de 3 a 4 semanas entre as doses do filhote',
+        'Considere a vacina de leucemia felina (FeLV) se o gato tiver acesso à rua',
         'Reforce a vacina antirrábica anualmente',
         'Vermifugue a cada 3 meses em adultos',
-        'Use antipulgas preventivo mensalmente',
-        'Faça check-up veterinário ao menos uma vez por ano'
+        'Observe o gato nas 48h após a vacina e procure o vet se notar inchaço persistente'
       ]
     },
     {
@@ -72,14 +79,22 @@ export class CareService {
 
       A idade ideal para castração é entre 4 e 6 meses, antes da puberdade. O procedimento é cirúrgico, realizado sob anestesia geral, e o gato geralmente se recupera completamente em 7 a 10 dias.
 
-      Um mito comum é que a castração engorda o gato. Na verdade, o que ocorre é uma redução do metabolismo basal — que pode ser compensada com ajuste na alimentação e estímulo à atividade física.`,
+      Antes da cirurgia, o veterinário costuma pedir exames de sangue pré-anestésicos para avaliar as funções renal e hepática do animal e garantir que ele suporte bem a anestesia. Também é necessário jejum alimentar de 8 a 12 horas antes do procedimento, conforme orientação do veterinário.
+
+      No pós-operatório, o colar elizabetano é essencial para impedir que o gato lamba ou morda os pontos, o que poderia causar infecção ou abertura da ferida. O animal deve ficar em repouso, sem pular ou correr, por cerca de 7 a 10 dias, com a ferida observada diariamente — vermelhidão leve é normal, mas secreção, mau cheiro ou inchaço crescente exigem retorno ao veterinário. A recuperação da fêmea costuma ser um pouco mais longa que a do macho, já que a cirurgia envolve a cavidade abdominal, enquanto a castração do macho é mais simples e rápida.
+
+      Um mito comum é que a castração engorda o gato. Na verdade, o que ocorre é uma redução do metabolismo basal — que pode ser compensada com ajuste na alimentação e estímulo à atividade física.
+
+      Muitos municípios brasileiros oferecem campanhas de castração gratuita ou de baixo custo, incluindo unidades móveis conhecidas como castramóveis, voltadas principalmente a tutores de baixa renda e ao controle populacional de animais em situação de rua. Vale a pena consultar a prefeitura ou ONGs de proteção animal da sua cidade.`,
       image: 'images/care/dois-gatos.jpg',
       tips: [
         'Castre entre 4 e 6 meses de idade',
         'Reduz risco de tumores mamários em até 90% nas fêmeas',
         'Elimina marcação de território e comportamentos de cio',
+        'Faça exames pré-anestésicos e respeite o jejum antes da cirurgia',
+        'Use colar elizabetano e mantenha repouso no pós-operatório',
         'Ajuste a alimentação após a cirurgia',
-        'Recuperação completa em 7 a 10 dias'
+        'Pesquise campanhas municipais de castração gratuita, como o castramóvel'
       ]
     },
     {
@@ -126,6 +141,40 @@ export class CareService {
         'Observe mudanças sutis de comportamento',
         'Tenha sempre um veterinário de emergência de referência',
         'Acostume o gato ao transporte desde filhote'
+      ]
+    },
+    {
+      id: 'envenenamento',
+      category: 'Saúde',
+      icon: 'warning',
+      title: 'Envenenamento e intoxicações',
+      summary: 'Gatos são curiosos por natureza, o que os expõe a plantas, alimentos e produtos domésticos que podem ser fatais. Saber reconhecer e agir rápido salva vidas.',
+      content: `Gatos exploram o ambiente com a boca, o que os torna especialmente vulneráveis a intoxicações por plantas, alimentos, medicamentos e produtos de limpeza comuns em qualquer casa. Muitos tutores não sabem que itens do dia a dia podem ser letais para um felino em quantidades mínimas.
+
+      Entre as plantas, o lírio (Lilium) é uma das mais perigosas — todas as suas partes, incluindo o pólen e a água do vaso, podem causar insuficiência renal fatal em gatos mesmo em pequena exposição. Comigo-ninguém-pode, espada-de-são-jorge e azaleia também são tóxicas e devem ficar fora do alcance ou fora de casa.
+
+      Entre alimentos e medicamentos, o paracetamol é extremamente tóxico para gatos mesmo em doses baixas, pois eles não conseguem metabolizá-lo — nunca administre medicamentos humanos sem orientação veterinária. Chocolate, cebola, alho, uvas e passas também são perigosos. Produtos de limpeza, venenos para ratos e anticongelante (etilenoglicol) — que tem sabor adocicado e atrai os gatos — completam a lista de riscos domésticos mais comuns.
+
+      Os sinais de intoxicação incluem vômito, diarreia, salivação excessiva, tremores, convulsões, letargia, dificuldade para respirar e pupilas dilatadas. Esses sintomas podem aparecer minutos ou horas após a exposição, dependendo da substância.
+
+      Diante de uma suspeita de envenenamento, o primeiro passo é ligar imediatamente para o veterinário ou um centro de controle de intoxicações — no Brasil, os Centros de Informação Toxicológica (CIATox) de cada estado atendem também casos envolvendo animais e podem orientar por telefone enquanto você se desloca. Descreva o que o gato ingeriu, a quantidade aproximada e o tempo desde a exposição, e leve a embalagem do produto ou um pedaço da planta suspeita para o atendimento — isso agiliza muito o diagnóstico e o tratamento correto.
+
+      O carvão ativado é um dos tratamentos mais usados em casos de intoxicação, pois adsorve toxinas ainda no trato digestivo, reduzindo sua absorção pelo organismo. Porém, ele deve ser administrado exclusivamente por um veterinário: a dose e a via de administração precisam ser corretas, o carvão não funciona para todas as substâncias — é ineficaz ou até contraindicado em casos de ingestão de produtos corrosivos, derivados de petróleo e alguns metais — e a administração incorreta em casa pode causar aspiração para os pulmões, levando a uma pneumonia grave. Nunca tente aplicar carvão ativado por conta própria sem orientação veterinária direta.
+
+      Para agir rápido quando o tempo é essencial, tenha previamente salvo no celular o contato de pelo menos uma clínica veterinária de emergência 24 horas perto de casa — pesquise isso antes de precisar, não durante a emergência. Muitas cidades também têm plantões de hospitais-escola de veterinária que atendem casos toxicológicos com mais estrutura.
+
+      O que nunca fazer diante de uma suspeita de envenenamento: não induza o vômito por conta própria, pois substâncias corrosivas ou derivadas de petróleo causam ainda mais dano ao serem regurgitadas, e um gato com rebaixamento de consciência pode aspirar o vômito para os pulmões; não dê remédios caseiros como leite, sal, óleo ou água oxigenada — nenhum deles é seguro ou eficaz para gatos e podem até piorar o quadro; não espere para ver se os sintomas melhoram sozinhos, já que o dano a órgãos como rim e fígado pode ser silencioso nas primeiras horas; e não administre nenhum medicamento humano como tentativa de tratamento.
+
+      Prevenção é a melhor proteção: guarde produtos de limpeza, medicamentos e venenos em armários fechados, pesquise a toxicidade de qualquer planta antes de trazê-la para casa, e tenha sempre salvo o contato de um veterinário de emergência disponível 24 horas.`,
+      image: 'images/care/veneno.jpg',
+      tips: [
+        'Mantenha plantas tóxicas como lírios fora de casa — são fatais até pelo pólen',
+        'Nunca dê medicamentos humanos ao gato, especialmente paracetamol',
+        'Guarde produtos de limpeza, venenos e anticongelante fora do alcance',
+        'Nunca induza vômito nem dê remédios caseiros como leite, sal ou óleo',
+        'Carvão ativado só deve ser aplicado por um veterinário — nunca em casa',
+        'Ligue para o veterinário ou o CIATox do seu estado e leve a embalagem do produto suspeito',
+        'Salve com antecedência o contato de uma clínica veterinária de emergência 24h'
       ]
     },
     {
