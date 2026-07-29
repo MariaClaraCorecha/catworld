@@ -12,13 +12,13 @@
   cursor: pointer;
 
   img[mat-card-image] {
-    height: 220px !important;
+    height: 200px !important;
     object-fit: cover !important;
     margin: 0 !important;
   }
 
   .card-icon-banner {
-    height: 220px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,6 +64,7 @@
   font-size: 0.875rem;
   line-height: 1.65;
   display: -webkit-box;
+  line-clamp: 3;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
