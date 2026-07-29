@@ -18,16 +18,20 @@ export class HeroComponent {
     'Descubra sobre temas como raças, cuidados, alimentação e muito mais sobre seus felinos favoritos';
 
   topics = [
-    { icon: 'pets', label: 'Raças' },
-    { icon: 'history_edu', label: 'História' },
-    { icon: 'medical_services', label: 'Cuidados' },
-    { icon: 'restaurant', label: 'Alimentação' },
-    { icon: 'directions_run', label: 'Exercícios' },
-    { icon: 'local_hospital', label: 'Doenças' },
-    { icon: 'auto_awesome', label: 'Curiosidades' },
+    { icon: 'pets', label: 'Raças', id: 'racas' },
+    { icon: 'history_edu', label: 'História', id: 'historia' },
+    { icon: 'medical_services', label: 'Cuidados', id: 'cuidados' },
+    { icon: 'restaurant', label: 'Alimentação', id: 'alimentacao' },
+    { icon: 'directions_run', label: 'Exercícios', id: 'exercicios' },
+    { icon: 'local_hospital', label: 'Doenças', id: 'doencas' },
+    { icon: 'auto_awesome', label: 'Curiosidades', id: 'curiosidades' },
   ];
 
   explore() {
     scrollToSection('racas');
+  }
+
+  goToTopic(sectionId: string) {
+    scrollToSection(sectionId);
   }
 }
