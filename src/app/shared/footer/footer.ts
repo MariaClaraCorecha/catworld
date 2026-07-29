@@ -20,6 +20,7 @@ export class Footer {
     { label: 'Cuidados', id: 'cuidados' },
     { label: 'Alimentação', id: 'alimentacao' },
     { label: 'Exercícios', id: 'exercicios' },
+    { label: 'Doenças', id: 'doencas' },
     { label: 'Curiosidades', id: 'curiosidades' },
   ];
 
