@@ -19,7 +19,16 @@
         matRipple
         (click)="goToDetail(card.id)"
       >
-        <img mat-card-image [src]="card.image" [alt]="card.title" loading="lazy" />
+        <img
+          *ngIf="card.image"
+          mat-card-image
+          [src]="card.image"
+          [alt]="card.title"
+          loading="lazy"
+        />
+        <div *ngIf="!card.image" class="card-icon-banner">
+          <mat-icon>{{ card.icon }}</mat-icon>
+        </div>
 
         <mat-card-header>
           <mat-card-title>{{ card.title }}</mat-card-title>

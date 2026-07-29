@@ -56,6 +56,21 @@
   }
 }
 
+.card-icon-banner {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ec407a, #ad1457);
+
+  mat-icon {
+    font-size: 64px;
+    width: 64px;
+    height: 64px;
+    color: #fff;
+  }
+}
+
 .card-text {
   font-size: 0.875rem;
   line-height: 1.65;
