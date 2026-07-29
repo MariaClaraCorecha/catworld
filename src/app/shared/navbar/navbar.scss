@@ -106,19 +106,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 0 !important;
+  line-height: 1;
   font-size: 20px;
   color: #ad1457;
   background: #fce4ec;
 }
 
 .user-name {
+  display: flex;
+  align-items: center;
   font-size: 0.9rem;
   font-weight: 500;
+  line-height: 1;
   max-width: 100px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding: 10px;
 }
 
 .user-menu-header {
@@ -142,6 +146,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 0 !important;
+  line-height: 1;
   font-size: 26px;
   color: #ad1457;
   background: #fce4ec;
