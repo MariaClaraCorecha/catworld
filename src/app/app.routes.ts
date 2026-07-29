@@ -47,4 +47,9 @@ export const routes: Routes = [
     path: 'perfil',
     loadComponent: () => import('./features/profile/profile').then((m) => m.ProfileComponent),
   },
+  {
+    path: 'feedback',
+    loadComponent: () =>
+      import('./features/feedback/feedback').then((m) => m.FeedbackComponent),
+  },
 ];

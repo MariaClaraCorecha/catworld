@@ -21,6 +21,16 @@
 
   <span class="nav-spacer"></span>
 
+  <button
+    mat-icon-button
+    class="nav-feedback-btn"
+    (click)="goToFeedback()"
+    matTooltip="Enviar feedback"
+    aria-label="Enviar feedback"
+  >
+    <mat-icon>feedback</mat-icon>
+  </button>
+
   <ng-container *ngIf="!authService.isLoggedIn()">
     <button
       *ngIf="!showGoogleBtn"
@@ -116,6 +126,11 @@
   >
     <mat-icon>{{ link.icon }}</mat-icon>
     {{ link.label }}
+  </button>
+
+  <button mat-button class="nav-mobile-btn" (click)="goToFeedback()">
+    <mat-icon>feedback</mat-icon>
+    Feedback
   </button>
 
   <button

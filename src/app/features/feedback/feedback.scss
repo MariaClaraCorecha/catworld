@@ -10,7 +10,7 @@
 .feedback-card {
   position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 420px;
   background: #ffffff;
   border-radius: 20px;
   padding: 3rem 2rem 2rem;
@@ -29,20 +29,20 @@
 
 .feedback-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #880e4f;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
-.feedback-subtitle {
-  font-size: 0.95rem;
+.feedback-sub {
+  font-size: 0.9rem;
   color: #ad1457;
-  font-weight: 300;
   margin-bottom: 1.5rem;
 }
 
 .feedback-form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -57,22 +57,23 @@
   margin-top: 0.5rem;
 }
 
-.feedback-success {
+.feedback-sent {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1.5rem 0;
-
-  mat-icon {
-    font-size: 48px;
-    width: 48px;
-    height: 48px;
-    color: #2e7d32;
-  }
+  gap: 1rem;
+  padding: 1rem 0;
 
   p {
     color: #4a4a4a;
     font-size: 0.95rem;
+    line-height: 1.5;
   }
+}
+
+.feedback-sent-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  color: #2e7d32;
 }

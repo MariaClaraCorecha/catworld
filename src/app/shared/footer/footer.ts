@@ -41,4 +41,8 @@ export class Footer {
   goHome() {
     this.router.navigate(['/']);
   }
+
+  goToFeedback() {
+    this.router.navigate(['/feedback']);
+  }
 }
