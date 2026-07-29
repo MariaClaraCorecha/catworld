@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, ElementRef, ViewChild, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -33,6 +33,7 @@ export class NavbarComponent implements OnInit {
   menuOpen = false;
   isHomePage = true;
   showGoogleBtn = false;
+  avatarError = false;
 
   constructor(
     private router: Router,
@@ -44,6 +45,11 @@ export class NavbarComponent implements OnInit {
         this.isHomePage = e.urlAfterRedirects === '/';
         this.menuOpen = false;
       });
+
+    effect(() => {
+      this.authService.user();
+      this.avatarError = false;
+    });
   }
 
   ngOnInit() {

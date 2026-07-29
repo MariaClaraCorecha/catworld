@@ -63,17 +63,31 @@
     class="nav-user-btn"
   >
     <img
+      *ngIf="authService.user()?.photoUrl && !avatarError"
       [src]="authService.user()?.photoUrl"
       [alt]="authService.user()?.name"
       class="user-avatar"
+      (error)="avatarError = true"
     />
+    <mat-icon *ngIf="!authService.user()?.photoUrl || avatarError" class="user-avatar user-avatar-fallback">
+      account_circle
+    </mat-icon>
     <span class="user-name">{{ authService.user()?.name?.split(' ')?.[0] }}</span>
-    <mat-icon iconPositionEnd>arrow_drop_down</mat-icon>
+    <mat-icon iconPositionEnd class="nav-user-arrow">arrow_drop_down</mat-icon>
   </button>
 
   <mat-menu #userMenu="matMenu">
     <div class="user-menu-header">
-      <img [src]="authService.user()?.photoUrl" class="user-menu-avatar" />
+      <img
+        *ngIf="authService.user()?.photoUrl && !avatarError"
+        [src]="authService.user()?.photoUrl"
+        [alt]="authService.user()?.name"
+        class="user-menu-avatar"
+        (error)="avatarError = true"
+      />
+      <mat-icon *ngIf="!authService.user()?.photoUrl || avatarError" class="user-menu-avatar user-menu-avatar-fallback">
+        account_circle
+      </mat-icon>
       <div>
         <p class="user-menu-name">{{ authService.user()?.name }}</p>
         <p class="user-menu-email">{{ authService.user()?.email }}</p>
@@ -132,7 +146,16 @@
 
   <div *ngIf="authService.isLoggedIn()" class="nav-mobile-user">
     <button class="nav-mobile-user-info" (click)="goToProfile()">
-      <img [src]="authService.user()?.photoUrl" class="user-avatar" />
+      <img
+        *ngIf="authService.user()?.photoUrl && !avatarError"
+        [src]="authService.user()?.photoUrl"
+        [alt]="authService.user()?.name"
+        class="user-avatar"
+        (error)="avatarError = true"
+      />
+      <mat-icon *ngIf="!authService.user()?.photoUrl || avatarError" class="user-avatar user-avatar-fallback">
+        account_circle
+      </mat-icon>
       <span>{{ authService.user()?.name }}</span>
     </button>
     <button mat-icon-button (click)="logout()">
