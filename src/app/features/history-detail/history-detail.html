@@ -2,7 +2,10 @@
 
   <!-- Hero da página -->
   <div class="detail-hero">
-    <img [src]="c.image" [alt]="c.title" class="detail-hero-img" />
+    <img *ngIf="c.image" [src]="c.image" [alt]="c.title" class="detail-hero-img" />
+    <div *ngIf="!c.image" class="detail-hero-icon">
+      <mat-icon>{{ c.icon }}</mat-icon>
+    </div>
     <div class="detail-hero-overlay">
       <div class="detail-hero-content">
 
