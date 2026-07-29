@@ -18,6 +18,7 @@ export class DiseasesService {
       id: 'doenca-renal-cronica',
       category: 'Doenças renais',
       icon: 'water_drop',
+      image: '/images/diseases/gato1.jpg',
       title: 'Doença renal crônica',
       summary:
         'A doença renal crônica é uma das condições mais comuns em gatos idosos, reduzindo aos poucos a capacidade dos rins de filtrar toxinas do sangue.',
@@ -40,6 +41,7 @@ export class DiseasesService {
       id: 'diabetes-felina',
       category: 'Doenças metabólicas',
       icon: 'monitor_weight',
+      image: '/images/diseases/gato2.jpg',
       title: 'Diabetes felina',
       summary:
         'A obesidade é o principal fator de risco para diabetes em gatos. Diagnóstico precoce e dieta adequada podem até reverter o quadro.',
@@ -62,6 +64,7 @@ export class DiseasesService {
       id: 'flutd-cistite',
       category: 'Doenças urinárias',
       icon: 'warning',
+      image: '/images/diseases/gato3.jpg',
       title: 'Doença do trato urinário inferior (FLUTD)',
       summary:
         'A FLUTD causa dor e dificuldade para urinar, e pode evoluir para uma obstrução — uma emergência que ameaça a vida, especialmente em machos.',
@@ -84,6 +87,7 @@ export class DiseasesService {
       id: 'gripe-felina',
       category: 'Doenças respiratórias',
       icon: 'local_hospital',
+      image: '/images/diseases/gato4.jpg',
       title: 'Complexo respiratório felino (gripe felina)',
       summary:
         'Altamente contagiosa entre gatos, a gripe felina é causada principalmente por herpesvírus e calicivírus, e é prevenível por vacina.',
@@ -106,6 +110,7 @@ export class DiseasesService {
       id: 'hipertireoidismo',
       category: 'Doenças hormonais',
       icon: 'medical_services',
+      image: '/images/diseases/gato5.jpg',
       title: 'Hipertireoidismo',
       summary:
         'Comum em gatos com mais de 10 anos, o hipertireoidismo acelera o metabolismo e pode mascarar problemas renais se não for bem investigado.',
@@ -128,6 +133,7 @@ export class DiseasesService {
       id: 'fiv-felv',
       category: 'Doenças infecciosas',
       icon: 'dangerous',
+      image: '/images/diseases/gato6.jpg',
       title: 'FIV e FeLV (imunodeficiência e leucemia felina)',
       summary:
         'FIV e FeLV são retrovírus que enfraquecem o sistema imunológico do gato, mas um diagnóstico positivo não é uma sentença — muitos gatos vivem anos com qualidade de vida.',
@@ -150,6 +156,7 @@ export class DiseasesService {
       id: 'doenca-periodontal',
       category: 'Saúde bucal',
       icon: 'clean_hands',
+      image: '/images/diseases/gatolaranja.jpg',
       title: 'Doença periodontal',
       summary:
         'Mais de 70% dos gatos adultos têm algum grau de doença periodontal — uma fonte silenciosa de dor crônica e risco para outros órgãos.',
