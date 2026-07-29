@@ -34,6 +34,7 @@ export class ProfileComponent implements OnInit {
   authService = inject(AuthService);
 
   saved = false;
+  avatarError = false;
 
   furOptions = ['Curta', 'Longa', 'Semi longa', 'Sem pelo'];
   genderOptions = ['Macho', 'Fêmea'];
