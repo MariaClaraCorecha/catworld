@@ -113,6 +113,7 @@ export class NavbarComponent implements OnInit {
     { label: 'Cuidados', id: 'cuidados', icon: 'medical_services' },
     { label: 'Alimentação', id: 'alimentacao', icon: 'restaurant' },
     { label: 'Exercícios', id: 'exercicios', icon: 'directions_run' },
+    { label: 'Doenças', id: 'doencas', icon: 'local_hospital' },
     { label: 'Curiosidades', id: 'curiosidades', icon: 'auto_awesome' },
   ];
 }
