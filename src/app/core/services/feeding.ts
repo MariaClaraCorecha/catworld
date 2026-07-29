@@ -27,13 +27,23 @@ export class FeedingService {
 
      Gatos são carnívoros obrigatórios — precisam de proteína animal para sobreviver. Ao escolher uma ração, o primeiro ingrediente da lista deve ser sempre uma proteína animal identificada: frango, salmão, atum. Ingredientes como "farinha de carne" sem identificação de origem são sinais de qualidade inferior.
 
-     A quantidade diária deve seguir as recomendações do fabricante ajustadas pelo veterinário, levando em conta o peso, idade e nível de atividade do animal. Gatos castrados tendem a ganhar peso mais facilmente e podem precisar de rações com restrição calórica.`,
+     A quantidade diária deve seguir as recomendações do fabricante ajustadas pelo veterinário, levando em conta o peso, idade e nível de atividade do animal. Gatos castrados tendem a ganhar peso mais facilmente e podem precisar de rações com restrição calórica.
+
+     Entender o rótulo ajuda a comparar rações com mais segurança. A tabela de níveis garantidos indica os percentuais mínimos de proteína bruta e gordura e os máximos de fibra e umidade — quanto maior o percentual mínimo de proteína e menor o de fibra, geralmente melhor a qualidade. "Farinha de vísceras" ou "subprodutos" sem espécie identificada, corantes artificiais e conservantes como BHA/BHT são sinais de receita inferior.
+
+     O debate sobre ração "grain-free" (sem grãos) é mais complexo do que parece: a ausência de grãos não torna a ração automaticamente melhor — o que importa é a qualidade e a origem dos ingredientes, não apenas a exclusão de um grupo específico. Gatos digerem cereais bem processados sem problema; o alerta vale para rações que substituem grãos por excesso de amidos de leguminosas de baixa qualidade nutricional.
+
+     A troca de ração deve ser feita ao longo de 7 a 10 dias, misturando gradualmente mais ração nova e menos da antiga a cada dia, para evitar vômitos e diarreia por adaptação digestiva brusca. Depois de aberto, o pacote deve ser bem fechado, guardado em local fresco e seco, longe de luz e calor, e consumido em até 4 a 6 semanas — a gordura da ração oxida com o tempo e perde palatabilidade e qualidade nutricional.
+
+     Deixar ração seca disponível o dia todo (alimentação livre) facilita o ganho de peso, já que é um alimento calórico e concentrado. Prefira porções medidas em horários fixos, e considere comedouros lentos ou brinquedos de busca alimentar para gatos que comem rápido demais ou precisam de estímulo mental durante a refeição.`,
       image: 'images/feeding/racao-seca.jpg',
       tips: [
         'Escolha rações com proteína animal identificada como primeiro ingrediente',
         'Prefira rações super-premium ou premium',
         'Siga a quantidade recomendada pelo fabricante e veterinário',
-        'Troque de ração gradualmente para evitar problemas digestivos',
+        'Troque de ração gradualmente, ao longo de 7 a 10 dias',
+        'Guarde a ração bem fechada e consuma em até 4 a 6 semanas após abrir',
+        'Prefira porções medidas em horários fixos em vez de alimentação livre',
         'Mantenha água fresca sempre disponível ao lado da ração seca'
       ]
     },
@@ -95,13 +105,22 @@ export class FeedingService {
 
      A cafeína — presente em café, chá, refrigerantes e energéticos — causa taquicardia, tremores e convulsões. As uvas e passas podem causar insuficiência renal aguda mesmo em pequenas quantidades, embora o mecanismo exato ainda não seja completamente compreendido.
 
-     O leite e derivados são frequentemente oferecidos a gatos, mas a maioria dos adultos é intolerante à lactose e pode desenvolver diarreia e desconforto digestivo. O xilitol, adoçante presente em chicletes e alguns alimentos diet, causa queda brusca de glicose e pode ser fatal.`,
+     O leite e derivados são frequentemente oferecidos a gatos, mas a maioria dos adultos é intolerante à lactose e pode desenvolver diarreia e desconforto digestivo. O xilitol, adoçante presente em chicletes e alguns alimentos diet, causa queda brusca de glicose e pode ser fatal.
+
+     Ossos cozidos de frango, peixe ou outras carnes racham em lascas afiadas e podem perfurar o esôfago, o estômago ou o intestino do gato, além de representar risco de engasgo. Massa de pão crua contendo fermento é outro perigo pouco conhecido: no calor e umidade do estômago, o fermento continua a crescer e libera álcool durante a fermentação, podendo causar distensão abdominal grave e intoxicação alcoólica.
+
+     Bebidas alcoólicas de qualquer tipo são extremamente tóxicas para gatos mesmo em quantidades mínimas, podendo causar depressão do sistema nervoso central, parada respiratória e morte — o pequeno porte do animal faz com que a dose tóxica seja muito menor que a de um cão ou humano. Atum enlatado para consumo humano, embora não seja tóxico, não deve ser oferecido com frequência: tem excesso de sódio, desequilíbrio nutricional para a dieta felina e pode conter níveis de mercúrio preocupantes com o consumo repetido.
+
+     Sempre desconfie de pratos temperados, mesmo que pareçam inofensivos — molhos, caldos e temperos prontos frequentemente contêm cebola ou alho em pó escondidos na composição. Na dúvida sobre um alimento, a regra mais segura é simplesmente não oferecer.`,
       image: 'images/feeding/cebola-alho.jpg',
       tips: [
         'Nunca ofereça cebola, alho ou derivados',
         'Chocolate é altamente tóxico — mantenha fora do alcance',
         'Evite uvas, passas e abacate',
         'Leite pode causar diarreia em gatos adultos',
+        'Nunca dê ossos cozidos nem massa de pão crua com fermento',
+        'Bebida alcoólica é fatal para gatos mesmo em quantidade mínima',
+        'Desconfie de temperos e molhos prontos — podem conter cebola/alho em pó',
         'Em caso de ingestão acidental ligue imediatamente ao veterinário'
       ]
     },
