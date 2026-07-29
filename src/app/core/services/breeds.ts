@@ -480,6 +480,54 @@ export class BreedsService {
         'Diferente da maioria dos gatos, costuma gostar de brincar com água',
       ],
     },
+    {
+      id: 'khao-manee',
+      name: 'Khao Manee',
+      origin: 'Tailândia',
+      lifespan: '10–12 anos',
+      image: 'images/breeds/khaomanee.jpg',
+      weight: '3–4,5 kg',
+      temperament: 'Alerta, sociável e afetuoso',
+      summary:
+        'Com pelagem branca imaculada e olhos que costumam ser de cores diferentes, o Khao Manee é uma raça tailandesa rara considerada símbolo de sorte.',
+      content: `O Khao Manee ("Pedra Branca", em tailandês) é mencionado em manuscritos tailandeses antigos, como o Tamra Maew, que remontam ao século XIV. Durante séculos foi mantido quase exclusivamente pela realeza e nobreza da Tailândia, sendo considerado um amuleto vivo de boa sorte.
+
+       Sua característica mais marcante é a pelagem totalmente branca combinada, na maioria dos exemplares, com heterocromia — um olho azul e outro dourado ou verde. É uma raça naturalmente rara mesmo em seu país de origem, e só começou a ser exportada e criada fora da Tailândia a partir da década de 1990.
+
+       É um gato alerta, curioso e muito ligado à família, gostando de participar ativamente do dia a dia da casa. Costuma ser bastante vocal e sociável, adaptando-se bem a outros animais e crianças.`,
+      icon: 'pets',
+      characteristics: { energy: 4, affection: 4, grooming: 2, shedding: 2, social: 4 },
+      facts: [
+        'Seu nome significa "Pedra Branca" em tailandês',
+        'É tradicionalmente considerado um amuleto de boa sorte na Tailândia',
+        'Muitos exemplares têm heterocromia — um olho de cada cor',
+        'Já foi mantido quase exclusivamente pela realeza tailandesa',
+      ],
+    },
+    {
+      id: 'lykoi',
+      name: 'Lykoi',
+      origin: 'EUA',
+      lifespan: '12–15 anos',
+      image: 'images/breeds/lykoi.jpg',
+      weight: '2–4,5 kg',
+      temperament: 'Curioso, ativo e independente',
+      summary:
+        'Conhecido como "gato-lobo" pela aparência selvagem e pelagem rala e irregular, o Lykoi é uma raça recente resultado de uma mutação natural.',
+      content: `O Lykoi surgiu nos Estados Unidos em 2010, a partir de uma mutação genética natural encontrada em gatos de pelo curto comuns. O nome vem do grego "lykos" (lobo), referência direta à aparência que lembra um lobisomem em miniatura. A raça foi reconhecida pela TICA em 2012.
+
+       A mutação afeta os folículos capilares, resultando em uma pelagem rala, irregular e sem subpelo em grande parte do corpo, com áreas de pele visível ao redor dos olhos, focinho e patas. Diferente do Sphynx, o Lykoi não é resultado de seleção para ausência de pelo, mas de uma mutação espontânea distinta.
+
+       Apesar da aparência selvagem, é um gato curioso, ativo e afetuoso com a família, embora mantenha um lado independente e um forte instinto de caça. Por ter pouca proteção de pelo, é sensível a temperaturas extremas e exige cuidados especiais com a pele.`,
+      icon: 'pets',
+      characteristics: { energy: 4, affection: 3, grooming: 3, shedding: 1, social: 3 },
+      facts: [
+        'É apelidado de "gato-lobo" por causa da aparência que lembra um lobisomem',
+        'Surgiu de uma mutação genética natural documentada em 2010',
+        'Foi reconhecido como raça pela TICA em 2012',
+        'Tem forte instinto de caça, mesmo sendo um gato de estimação',
+      ],
+    },
   ];
 
   getAll(): Breed[] {
