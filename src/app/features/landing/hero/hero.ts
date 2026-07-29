@@ -19,11 +19,11 @@ export class HeroComponent {
 
   topics = [
     { icon: 'pets', label: 'Raças' },
+    { icon: 'history_edu', label: 'História' },
     { icon: 'medical_services', label: 'Cuidados' },
     { icon: 'restaurant', label: 'Alimentação' },
     { icon: 'directions_run', label: 'Exercícios' },
     { icon: 'auto_awesome', label: 'Curiosidades' },
-    { icon: 'history_edu', label: 'História' },
   ];
 
   explore() {
