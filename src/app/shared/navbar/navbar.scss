@@ -57,11 +57,6 @@
   white-space: nowrap;
 }
 
-.nav-feedback-btn {
-  color: #ad1457;
-  margin-right: 4px;
-}
-
 .google-btn-wrapper {
   display: flex;
   align-items: center;
@@ -234,6 +229,5 @@
   .nav-links { display: none; }
   .nav-btn-login { display: none !important; }
   .nav-user-btn { display: none !important; }
-  .nav-feedback-btn { display: none !important; }
   .nav-hamburger { display: inline-flex !important; }
 }

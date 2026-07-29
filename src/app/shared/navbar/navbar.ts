@@ -6,7 +6,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatTooltipModule } from '@angular/material/tooltip';
 import { filter } from 'rxjs/operators';
 import { AuthService } from '../../core/services/auth';
 import { scrollToSection } from '../../core/utils/scroll-to-section';
@@ -21,7 +20,6 @@ import { scrollToSection } from '../../core/utils/scroll-to-section';
     MatIconModule,
     MatMenuModule,
     MatDividerModule,
-    MatTooltipModule,
   ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
@@ -84,11 +82,6 @@ export class NavbarComponent implements OnInit {
 
   goToProfile() {
     this.router.navigate(['/perfil']);
-    this.menuOpen = false;
-  }
-
-  goToFeedback() {
-    this.router.navigate(['/feedback']);
     this.menuOpen = false;
   }
 
