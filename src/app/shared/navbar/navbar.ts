@@ -109,10 +109,10 @@ export class NavbarComponent implements OnInit {
 
   links = [
     { label: 'Raças', id: 'racas', icon: 'pets' },
+    { label: 'História', id: 'historia', icon: 'history_edu' },
     { label: 'Cuidados', id: 'cuidados', icon: 'medical_services' },
     { label: 'Alimentação', id: 'alimentacao', icon: 'restaurant' },
     { label: 'Exercícios', id: 'exercicios', icon: 'directions_run' },
     { label: 'Curiosidades', id: 'curiosidades', icon: 'auto_awesome' },
-    { label: 'História', id: 'historia', icon: 'history_edu' },
   ];
 }
