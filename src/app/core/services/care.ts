@@ -39,6 +39,60 @@ export class CareService {
       ],
     },
     {
+      id: 'caixa-de-areia',
+      category: 'Higiene',
+      icon: 'grain',
+      title: 'Caixa de areia',
+      summary:
+        'A caixa de areia é o centro dos cuidados de higiene do gato — o tipo certo, a areia adequada e a limpeza correta previnem estresse e problemas urinários.',
+      content: `Gatos são extremamente exigentes com a higiene da caixa de areia, e esse é um dos pontos mais importantes — e mais negligenciados — no cuidado diário. Uma caixa suja é uma das principais causas de eliminação fora do lugar e de estresse felino, já que o gato pode passar a associar a caixa a uma experiência desagradável.
+
+      A quantidade e a posição das caixas fazem toda a diferença. A regra geral é ter uma caixa por gato mais uma extra — em casas com vários gatos, isso evita disputas territoriais pelo acesso. Posicione as caixas em locais tranquilos, longe do comedouro e de aparelhos barulhentos como máquina de lavar, mas ainda assim de fácil acesso, já que gatos evitam se esforçar demais para chegar até elas.
+
+      Existem caixas abertas e caixas com tampa. As abertas costumam ser preferidas pela maioria dos gatos, pois oferecem mais espaço para se virar e não concentram o odor — o que pode desestimular o uso. Já as caixas com tampa preservam a privacidade e escondem a areia da vista, mas retêm o cheiro, o que alguns gatos rejeitam. O tamanho ideal é cerca de 1,5 vez o comprimento do gato, com uma camada de areia de 5 a 7 centímetros.
+
+      Entre os tipos de areia, a bentonita aglomerante é a mais popular por formar bolinhas firmes que facilitam a limpeza diária. A areia de sílica, em cristais, absorve odores e dura mais tempo, mas tem custo mais alto. Areias vegetais, feitas de milho, pinus ou papel, são opções biodegradáveis e mais indicadas para gatos com sensibilidade respiratória ou filhotes. Trocas de areia devem ser graduais — misturando a nova com a antiga por alguns dias — já que gatos podem rejeitar completamente um tipo desconhecido.
+
+      A rotina de limpeza deve incluir a retirada de fezes e urina pelo menos uma a duas vezes por dia, com a troca completa da areia e lavagem da caixa com sabão neutro a cada uma ou duas semanas. Evite produtos de limpeza com cheiro forte, como amônia ou cloro — além de tóxicos, esses odores afastam o gato da caixa.
+
+      Mudanças no uso da caixa de areia nunca devem ser ignoradas: parar de usá-la, urinar fora, ficar muito tempo dentro sem eliminar, miar durante o processo ou sangue na urina são sinais de alerta que podem indicar cistite, infecção urinária ou obstrução — esta última uma emergência especialmente grave em gatos machos. Procure o veterinário assim que notar qualquer uma dessas alterações.`,
+      image: 'images/care/areia.jpg',
+      tips: [
+        'Tenha uma caixa por gato mais uma extra',
+        'Posicione as caixas longe do comedouro e de barulhos',
+        'Limpe fezes e urina diariamente e troque toda a areia semanalmente',
+        'Escolha areia sem perfume forte — gatos são sensíveis a cheiros',
+        'Use caixa do tamanho certo (1,5x o gato) com 5 a 7cm de areia',
+        'Mudanças no uso da caixa podem indicar problema urinário — procure o veterinário',
+      ],
+    },
+    {
+      id: 'carinho',
+      category: 'Bem-estar',
+      icon: 'favorite',
+      title: 'Como demonstrar carinho',
+      summary:
+        'Gatos amam carinho, mas do jeito deles — entender a linguagem corporal felina é o segredo para um vínculo de confiança sem forçar contato indesejado.',
+      content: `Diferente de cães, gatos preferem que o contato físico seja iniciado por eles mesmos. Forçar colo, abraços ou carinho em um gato que está se afastando ou escondido tende a gerar desconfiança em vez de aproximação — o ideal é deixar o gato vir até você e recompensar essa aproximação com calma.
+
+      As áreas que a maioria dos gatos gosta de receber carinho são a cabeça, as bochechas, o queixo e a base das orelhas — regiões onde eles possuem glândulas de feromônios e costumam esfregar para marcar território, o que faz o carinho ali ser reconhecido como algo familiar e agradável. Já a barriga, as patas e a cauda são áreas sensíveis que a maior parte dos gatos não gosta de ter tocadas, mesmo que se deitem de barriga para cima como sinal de confiança — nesse caso, é uma exposição de vulnerabilidade, não um convite para cafuné na barriga.
+
+      Prestar atenção na linguagem corporal evita que o carinho vire desconforto. Orelhas viradas para trás ou para os lados, cauda batendo com força, pele se contraindo em ondas (especialmente perto da base da cauda) e um miado curto e seco são sinais claros de que o gato quer que a interação pare. Ignorar esses sinais é a causa mais comum das famosas "mordidas de amor", quando o gato morde de leve para comunicar que já teve carinho suficiente.
+
+      O piscar lento é uma das formas mais claras de comunicação afetiva entre gatos e humanos — muitas vezes chamado de "beijo de gato". Olhar nos olhos do gato e piscar devagar, sem fixar o olhar de forma intensa (o que os gatos interpretam como ameaça), costuma ser retribuído com outro piscar lento, e é uma ótima forma de demonstrar carinho à distância, sem contato físico.
+
+      Sessões curtas e frequentes de carinho funcionam melhor do que uma sessão longa — a maioria dos gatos prefere interações de poucos minutos, várias vezes ao dia, do que ficar preso no colo por muito tempo. Respeitar o momento em que o gato quer se afastar, sem segurar ou impedir, fortalece a confiança e faz com que ele volte a buscar contato por conta própria com mais frequência.`,
+      image: 'images/care/gatos.jpg',
+      tips: [
+        'Deixe o gato iniciar o contato — não force colo ou abraços',
+        'Faça carinho na cabeça, bochechas, queixo e base das orelhas',
+        'Evite mexer na barriga, patas e cauda',
+        'Pare ao notar orelhas para trás, cauda batendo ou pele se contraindo',
+        'Experimente o piscar lento como forma de carinho à distância',
+        'Prefira sessões curtas e frequentes a uma única sessão longa',
+      ],
+    },
+    {
       id: 'saude',
       category: 'Saúde',
       icon: 'vaccines',
