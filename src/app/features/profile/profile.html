@@ -21,7 +21,70 @@
 
     <mat-divider class="profile-divider" />
 
-    <form [formGroup]="form" class="profile-form" (ngSubmit)="save()">
+    <p *ngIf="saved" class="profile-saved-msg">Perfil atualizado!</p>
+
+    <div class="profile-view" *ngIf="!editing">
+      <div class="profile-info-chips" *ngIf="user.city || user.birthDate">
+        <span class="info-chip" *ngIf="user.city">
+          <mat-icon>place</mat-icon>
+          {{ user.city }}
+        </span>
+        <span class="info-chip" *ngIf="user.birthDate">
+          <mat-icon>cake</mat-icon>
+          {{ formattedBirthDate(user.birthDate) }}
+          <ng-container *ngIf="age(user.birthDate) as userAge"> · {{ userAge }} anos</ng-container>
+        </span>
+      </div>
+
+      <p class="profile-bio" *ngIf="user.bio">{{ user.bio }}</p>
+
+      <div class="profile-view-header">
+        <h2 class="profile-section-title">Meus gatos</h2>
+        <button mat-button color="primary" type="button" (click)="startEditing()">
+          <mat-icon>edit</mat-icon>
+          Editar perfil
+        </button>
+      </div>
+
+      <div class="cats-view-list" *ngIf="filledCats.length; else noCats">
+        <div class="cat-view-card" *ngFor="let cat of filledCats">
+          <div class="cat-view-avatar">
+            <img *ngIf="breedImage(cat.breed) as img" [src]="img" [alt]="cat.breed" />
+            <mat-icon *ngIf="!breedImage(cat.breed)">pets</mat-icon>
+          </div>
+          <div class="cat-view-info">
+            <h3 class="cat-view-name">{{ cat.name }}</h3>
+            <div class="cat-view-tags">
+              <span class="cat-tag" *ngIf="cat.breed">
+                <mat-icon>pets</mat-icon>
+                {{ cat.breed }}
+              </span>
+              <span class="cat-tag" *ngIf="cat.gender">
+                <mat-icon>{{ cat.gender === 'Fêmea' ? 'female' : 'male' }}</mat-icon>
+                {{ cat.gender }}
+              </span>
+              <span class="cat-tag" *ngIf="cat.age">
+                <mat-icon>cake</mat-icon>
+                {{ cat.age }} anos
+              </span>
+              <span class="cat-tag" *ngIf="cat.color">
+                <mat-icon>palette</mat-icon>
+                {{ cat.color }}
+              </span>
+              <span class="cat-tag" *ngIf="cat.fur">
+                <mat-icon>content_cut</mat-icon>
+                {{ cat.fur }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #noCats>
+        <p class="cats-empty">Nenhum gato cadastrado ainda.</p>
+      </ng-template>
+    </div>
+
+    <form *ngIf="editing" [formGroup]="form" class="profile-form" (ngSubmit)="save()">
       <mat-form-field appearance="outline" class="profile-field">
         <mat-label>Data de nascimento</mat-label>
         <input matInput type="date" formControlName="birthDate" />
@@ -115,12 +178,21 @@
         Adicionar outro gato
       </button>
 
-      <button mat-flat-button color="primary" type="submit" class="profile-save">
-        <mat-icon>save</mat-icon>
-        Salvar alterações
-      </button>
-
-      <p *ngIf="saved" class="profile-saved-msg">Perfil atualizado!</p>
+      <div class="profile-save-row">
+        <button
+          *ngIf="hasProfileData"
+          mat-stroked-button
+          type="button"
+          class="profile-cancel"
+          (click)="cancelEdit()"
+        >
+          Cancelar
+        </button>
+        <button mat-flat-button color="primary" type="submit" class="profile-save">
+          <mat-icon>save</mat-icon>
+          Salvar alterações
+        </button>
+      </div>
     </form>
 
     <mat-divider class="profile-divider" />
