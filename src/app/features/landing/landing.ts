@@ -5,6 +5,7 @@ import { BreedsComponent } from './breeds/breeds';
 import { CareComponent } from './care/care';
 import { FeedingComponent } from './feeding/feeding';
 import { Exercises } from './exercises/exercises';
+import { Diseases } from './diseases/diseases';
 import { Curiosities } from './curiosities/curiosities';
 
 @Component({
@@ -17,6 +18,7 @@ import { Curiosities } from './curiosities/curiosities';
     CareComponent,
     FeedingComponent,
     Exercises,
+    Diseases,
     Curiosities,
   ],
   template: `
@@ -26,6 +28,7 @@ import { Curiosities } from './curiosities/curiosities';
     <app-care />
     <app-feeding />
     <app-exercises />
+    <app-diseases />
     <app-curiosities />
   `,
 })
