@@ -115,5 +115,6 @@ export class NavbarComponent implements OnInit {
     { label: 'Exercícios', id: 'exercicios', icon: 'directions_run' },
     { label: 'Doenças', id: 'doencas', icon: 'local_hospital' },
     { label: 'Curiosidades', id: 'curiosidades', icon: 'auto_awesome' },
+    { label: 'Quiz', id: 'quiz', icon: 'quiz' },
   ];
 }
