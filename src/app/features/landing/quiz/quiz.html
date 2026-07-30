@@ -1,0 +1,107 @@
+<section id="quiz" class="section">
+  <div class="container">
+
+    <h2 class="section-title">Quiz Felino</h2>
+    <p class="section-sub">
+      Teste seus conhecimentos sobre gatos — esse desafio pode ser feito apenas uma vez
+    </p>
+
+    @if (stage === 'intro' && !declined) {
+      <div class="quiz-intro">
+        <mat-icon class="quiz-intro-icon">help</mat-icon>
+        <p class="quiz-intro-text">
+          Você terá uma única tentativa para responder {{ questions.length }} perguntas sobre
+          gatos. Deseja realmente fazer o teste agora?
+        </p>
+        <div class="quiz-intro-actions">
+          <button mat-raised-button color="primary" (click)="confirmStart()">
+            <mat-icon>play_arrow</mat-icon>
+            Sim, quero fazer o teste
+          </button>
+          <button mat-stroked-button (click)="declineStart()">Agora não</button>
+        </div>
+      </div>
+    }
+
+    @if (stage === 'intro' && declined) {
+      <div class="quiz-intro quiz-intro-declined">
+        <mat-icon class="quiz-intro-icon">sentiment_neutral</mat-icon>
+        <p class="quiz-intro-text">Sem problemas! Volte quando quiser tentar o desafio.</p>
+        <button mat-stroked-button color="primary" (click)="askToStart()">
+          Mudei de ideia, quero fazer o teste
+        </button>
+      </div>
+    }
+
+    @if (stage === 'playing') {
+      <div class="quiz-card">
+        @for (q of questions; track q.id; let i = $index) {
+          <div class="quiz-question">
+            <p class="quiz-question-text">{{ i + 1 }}. {{ q.question }}</p>
+
+            <mat-radio-group class="quiz-options" [(ngModel)]="answers[q.id]" [name]="q.id">
+              @for (option of q.options; track option; let optIndex = $index) {
+                <mat-radio-button [value]="optIndex">{{ option }}</mat-radio-button>
+              }
+            </mat-radio-group>
+          </div>
+        }
+
+        <button
+          mat-raised-button
+          color="primary"
+          class="quiz-submit-btn"
+          [disabled]="!allAnswered()"
+          (click)="submitQuiz()"
+        >
+          <mat-icon>fact_check</mat-icon>
+          Ver resultado
+        </button>
+      </div>
+    }
+
+    @if (stage === 'result') {
+      <div class="quiz-result">
+        <mat-icon class="quiz-result-icon">{{ resultIcon() }}</mat-icon>
+        <p class="quiz-score">{{ score() }} / {{ questions.length }}</p>
+        <p class="quiz-message">{{ resultMessage() }}</p>
+
+        <div class="quiz-badges">
+          @for (badge of badges(); track badge.id) {
+            <span class="quiz-badge">
+              <mat-icon>{{ badge.icon }}</mat-icon>
+              {{ badge.label }}
+            </span>
+          }
+        </div>
+
+        <div class="quiz-review">
+          @for (q of questions; track q.id; let i = $index) {
+            <div
+              class="quiz-review-item"
+              [class.correct]="isCorrect(q)"
+              [class.incorrect]="!isCorrect(q)"
+            >
+              <mat-icon>{{ isCorrect(q) ? 'check_circle' : 'cancel' }}</mat-icon>
+              <div>
+                <p class="quiz-review-question">{{ i + 1 }}. {{ q.question }}</p>
+                @if (!isCorrect(q)) {
+                  <p class="quiz-review-answer">
+                    Resposta correta: {{ q.options[q.correctIndex] }}
+                  </p>
+                }
+                <p class="quiz-review-explanation">{{ q.explanation }}</p>
+              </div>
+            </div>
+          }
+        </div>
+
+        <p class="quiz-done-note">
+          <mat-icon>lock</mat-icon>
+          Você já concluiu este teste — ele pode ser feito apenas uma vez.
+        </p>
+      </div>
+    }
+
+  </div>
+</section>
