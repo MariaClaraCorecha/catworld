@@ -7,6 +7,7 @@ import { FeedingComponent } from './feeding/feeding';
 import { Exercises } from './exercises/exercises';
 import { Diseases } from './diseases/diseases';
 import { Curiosities } from './curiosities/curiosities';
+import { Quiz } from './quiz/quiz';
 
 @Component({
   selector: 'app-landing',
@@ -20,6 +21,7 @@ import { Curiosities } from './curiosities/curiosities';
     Exercises,
     Diseases,
     Curiosities,
+    Quiz,
   ],
   template: `
     <app-hero />
@@ -30,6 +32,7 @@ import { Curiosities } from './curiosities/curiosities';
     <app-exercises />
     <app-diseases />
     <app-curiosities />
+    <app-quiz />
   `,
 })
 export class LandingComponent {}
