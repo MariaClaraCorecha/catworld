@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { AuthService, Cat } from '../../core/services/auth';
 import { BreedsService } from '../../core/services/breeds';
+import { QUIZ_STORAGE_KEY, QuizBadge, QuizService } from '../../core/services/quiz';
 
 @Component({
   selector: 'app-profile',
@@ -31,11 +32,13 @@ export class ProfileComponent implements OnInit {
   private router = inject(Router);
   private fb = inject(FormBuilder);
   private breedsService = inject(BreedsService);
+  private quizService = inject(QuizService);
   authService = inject(AuthService);
 
   saved = false;
   avatarError = false;
   editing = false;
+  quizBadges: QuizBadge[] = [];
 
   furOptions = ['Curta', 'Longa', 'Semi longa', 'Sem pelo'];
   genderOptions = ['Macho', 'Fêmea'];
@@ -84,6 +87,11 @@ export class ProfileComponent implements OnInit {
     existingCats.forEach((cat) => this.cats.push(this.newCatGroup(cat)));
 
     this.editing = !this.hasProfileData;
+
+    const savedQuiz = localStorage.getItem(QUIZ_STORAGE_KEY);
+    if (savedQuiz) {
+      this.quizBadges = this.quizService.getBadges(JSON.parse(savedQuiz));
+    }
   }
 
   get hasProfileData(): boolean {

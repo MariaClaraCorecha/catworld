@@ -19,6 +19,13 @@
     <h1 class="profile-name">{{ user.name }}</h1>
     <p class="profile-email">{{ user.email }}</p>
 
+    <div class="profile-badges" *ngIf="quizBadges.length">
+      <span class="profile-badge" *ngFor="let badge of quizBadges">
+        <mat-icon>{{ badge.icon }}</mat-icon>
+        {{ badge.label }}
+      </span>
+    </div>
+
     <mat-divider class="profile-divider" />
 
     <p *ngIf="saved" class="profile-saved-msg">Perfil atualizado!</p>
