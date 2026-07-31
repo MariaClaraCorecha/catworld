@@ -6,7 +6,32 @@
       Teste seus conhecimentos sobre gatos — esse desafio pode ser feito apenas uma vez
     </p>
 
-    @if (stage === 'intro' && !declined) {
+    @if (!authService.isLoggedIn()) {
+      <div class="quiz-intro quiz-intro-locked">
+        <mat-icon class="quiz-intro-icon">lock</mat-icon>
+        <p class="quiz-intro-text">
+          Você precisa estar logado para fazer o quiz. Entre com sua conta Google para testar
+          seus conhecimentos sobre gatos.
+        </p>
+
+        @if (!showGoogleBtn) {
+          <button mat-raised-button color="primary" (click)="showLoginButton()">
+            <mat-icon>account_circle</mat-icon>
+            Entrar com Google
+          </button>
+        }
+
+        @if (showGoogleBtn) {
+          <div #quizGoogleBtn class="google-btn-wrapper"></div>
+        }
+
+        @if (authService.loginError()) {
+          <p class="google-login-error">{{ authService.loginError() }}</p>
+        }
+      </div>
+    }
+
+    @if (authService.isLoggedIn() && stage === 'intro' && !declined) {
       <div class="quiz-intro">
         <mat-icon class="quiz-intro-icon">help</mat-icon>
         <p class="quiz-intro-text">
@@ -23,7 +48,7 @@
       </div>
     }
 
-    @if (stage === 'intro' && declined) {
+    @if (authService.isLoggedIn() && stage === 'intro' && declined) {
       <div class="quiz-intro quiz-intro-declined">
         <mat-icon class="quiz-intro-icon">sentiment_neutral</mat-icon>
         <p class="quiz-intro-text">Sem problemas! Volte quando quiser tentar o desafio.</p>
@@ -33,7 +58,7 @@
       </div>
     }
 
-    @if (stage === 'playing') {
+    @if (authService.isLoggedIn() && stage === 'playing') {
       <div class="quiz-card">
         @for (q of questions; track q.id; let i = $index) {
           <div class="quiz-question">
@@ -60,7 +85,7 @@
       </div>
     }
 
-    @if (stage === 'result') {
+    @if (authService.isLoggedIn() && stage === 'result') {
       <div class="quiz-result">
         <mat-icon class="quiz-result-icon">{{ resultIcon() }}</mat-icon>
         <p class="quiz-score">{{ score() }} / {{ questions.length }}</p>
@@ -98,10 +123,9 @@
 
         <p class="quiz-done-note">
           <mat-icon>lock</mat-icon>
-          Você já concluiu este teste — ele pode ser feito apenas uma vez.
+          Teste Concluído! Não é possível fazer novamente
         </p>
       </div>
     }
-
   </div>
 </section>
