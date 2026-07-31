@@ -505,6 +505,30 @@ export class BreedsService {
       ],
     },
     {
+      id: 'manx',
+      name: 'Manx',
+      origin: 'Ilha de Man (Reino Unido)',
+      lifespan: '9–13 anos',
+      image: 'images/breeds/manx.jpg',
+      weight: '3,5–5,5 kg',
+      temperament: 'Sociável, brincalhão e leal',
+      summary:
+        'Originário da Ilha de Man, o Manx é conhecido pela mutação que resulta em cauda ausente ou muito curta e por um andar peculiar de coelho.',
+      content: `O Manx é uma raça natural originária da Ilha de Man, uma pequena ilha entre a Inglaterra e a Irlanda. A ausência de cauda é resultado de uma mutação genética espontânea que se isolou na população local ao longo de séculos, sem cruzamento com gatos de fora da ilha.
+
+       A mutação afeta a coluna vertebral e pode variar em grau — do "rumpy" (sem cauda alguma) ao "longy" (cauda quase do tamanho normal), passando por variações intermediárias. Por afetar a coluna, o cruzamento entre dois Manx "rumpy" pode trazer complicações genéticas, por isso criadores costumam cruzá-los com exemplares de cauda mais longa.
+
+       As patas traseiras mais compridas que as dianteiras dão ao Manx um jeito de caminhar saltitante, parecido com o de um coelho. É um gato sociável, brincalhão e muito apegado à família, adaptando-se bem a crianças e outros animais.`,
+      icon: 'pets',
+      characteristics: { energy: 3, affection: 4, grooming: 2, shedding: 3, social: 4 },
+      facts: [
+        'Pode nascer completamente sem cauda ou com cauda bem curta',
+        'O grau de cauda varia entre "rumpy" (sem cauda) e "longy" (cauda quase normal)',
+        'Seu andar saltitante lembra o de um coelho',
+        'É uma raça natural e isolada, originária da Ilha de Man',
+      ],
+    },
+    {
       id: 'lykoi',
       name: 'Lykoi',
       origin: 'EUA',
