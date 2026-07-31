@@ -137,7 +137,7 @@
                             <mat-icon>{{ reminder.icon }}</mat-icon>
                             <span class="reminder-text">
                               <strong>{{ reminder.label }}</strong>
-                              {{ reminder.detail }}
+                              <span class="reminder-detail">{{ reminder.detail }}</span>
                             </span>
                             @if (reminder.key !== 'neutering') {
                               <button

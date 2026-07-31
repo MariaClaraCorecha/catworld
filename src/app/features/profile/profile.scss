@@ -384,7 +384,7 @@
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  padding: 0.5rem 0.7rem;
+  padding: 0.55rem 0.75rem;
   border-radius: 12px;
   border-left: 4px solid transparent;
   background: #ffffff;
@@ -396,7 +396,8 @@
     transform 0.15s ease;
 
   &:hover {
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateX(2px);
   }
 
   mat-icon:first-child {
@@ -418,7 +419,15 @@
 
     strong {
       display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
       color: #2d2d2d;
+    }
+
+    .reminder-detail {
+      display: block;
+      font-size: 0.72rem;
+      color: #8a8a8a;
     }
   }
 
