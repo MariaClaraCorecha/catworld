@@ -10,7 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { AuthService, Cat } from '../../core/services/auth';
 import { BreedsService } from '../../core/services/breeds';
-import { QUIZ_STORAGE_KEY, QuizBadge, QuizService } from '../../core/services/quiz';
+import { QuizBadge, QuizService } from '../../core/services/quiz';
 
 @Component({
   selector: 'app-profile',
@@ -88,10 +88,7 @@ export class ProfileComponent implements OnInit {
 
     this.editing = !this.hasProfileData;
 
-    const savedQuiz = localStorage.getItem(QUIZ_STORAGE_KEY);
-    if (savedQuiz) {
-      this.quizBadges = this.quizService.getBadges(JSON.parse(savedQuiz));
-    }
+    this.quizBadges = this.quizService.getAllEarnedBadges();
   }
 
   get hasProfileData(): boolean {
