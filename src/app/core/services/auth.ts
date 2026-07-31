@@ -7,6 +7,10 @@ export interface Cat {
   color?: string;
   age?: string;
   fur?: string;
+  neutered?: boolean;
+  lastDeworming?: string;
+  lastVaccine?: string;
+  lastCheckup?: string;
 }
 
 export interface CatUser {
