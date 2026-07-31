@@ -65,7 +65,6 @@ export class QuizPlayComponent implements OnInit, QuizCanDeactivate {
   onBeforeUnload(event: BeforeUnloadEvent) {
     if (this.stage === 'playing') {
       event.preventDefault();
-      event.returnValue = '';
     }
   }
 
