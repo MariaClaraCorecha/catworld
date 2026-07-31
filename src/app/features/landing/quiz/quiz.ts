@@ -1,9 +1,10 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { QUIZ_STORAGE_KEY, QuizBadge, QuizQuestion, QuizService } from '../../../core/services/quiz';
+import { AuthService } from '../../../core/services/auth';
 
 type QuizStage = 'intro' | 'playing' | 'result';
 
@@ -16,6 +17,10 @@ type QuizStage = 'intro' | 'playing' | 'result';
 })
 export class Quiz implements OnInit {
   private quizService = inject(QuizService);
+  authService = inject(AuthService);
+
+  @ViewChild('quizGoogleBtn') quizGoogleBtn!: ElementRef;
+  showGoogleBtn = false;
 
   questions: QuizQuestion[] = this.quizService.getAll();
   answers: Record<string, number | null> = Object.fromEntries(
@@ -23,6 +28,16 @@ export class Quiz implements OnInit {
   );
   stage: QuizStage = 'intro';
   declined = false;
+
+  showLoginButton() {
+    this.showGoogleBtn = true;
+
+    setTimeout(() => {
+      if (this.quizGoogleBtn?.nativeElement) {
+        this.authService.initialize(this.quizGoogleBtn.nativeElement);
+      }
+    });
+  }
 
   ngOnInit() {
     const saved = localStorage.getItem(QUIZ_STORAGE_KEY);
