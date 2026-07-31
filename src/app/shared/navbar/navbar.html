@@ -61,17 +61,21 @@
     mat-button
     [matMenuTriggerFor]="userMenu"
     class="nav-user-btn"
+    [matTooltip]="hasUrgentReminders() ? 'Você tem lembretes de cuidados pendentes' : ''"
   >
-    <img
-      *ngIf="authService.user()?.photoUrl && !avatarError"
-      [src]="authService.user()?.photoUrl"
-      [alt]="authService.user()?.name"
-      class="user-avatar"
-      (error)="avatarError = true"
-    />
-    <mat-icon *ngIf="!authService.user()?.photoUrl || avatarError" class="user-avatar user-avatar-fallback">
-      account_circle
-    </mat-icon>
+    <span class="user-avatar-wrapper">
+      <img
+        *ngIf="authService.user()?.photoUrl && !avatarError"
+        [src]="authService.user()?.photoUrl"
+        [alt]="authService.user()?.name"
+        class="user-avatar"
+        (error)="avatarError = true"
+      />
+      <mat-icon *ngIf="!authService.user()?.photoUrl || avatarError" class="user-avatar user-avatar-fallback">
+        account_circle
+      </mat-icon>
+      <span class="reminder-dot" *ngIf="hasUrgentReminders()"></span>
+    </span>
     <mat-icon iconPositionEnd class="nav-user-arrow">arrow_drop_down</mat-icon>
   </button>
 
@@ -145,16 +149,20 @@
 
   <div *ngIf="authService.isLoggedIn()" class="nav-mobile-user">
     <button class="nav-mobile-user-info" (click)="goToProfile()">
-      <img
-        *ngIf="authService.user()?.photoUrl && !avatarError"
-        [src]="authService.user()?.photoUrl"
-        [alt]="authService.user()?.name"
-        class="user-avatar"
-        (error)="avatarError = true"
-      />
-      <mat-icon *ngIf="!authService.user()?.photoUrl || avatarError" class="user-avatar user-avatar-fallback">
-        account_circle
-      </mat-icon>
+      <span class="user-avatar-wrapper">
+        <img
+          *ngIf="authService.user()?.photoUrl && !avatarError"
+          [src]="authService.user()?.photoUrl"
+          [alt]="authService.user()?.name"
+          class="user-avatar"
+          (error)="avatarError = true"
+        />
+        <mat-icon *ngIf="!authService.user()?.photoUrl || avatarError" class="user-avatar user-avatar-fallback">
+          account_circle
+        </mat-icon>
+        <span class="reminder-dot" *ngIf="hasUrgentReminders()"></span>
+      </span>
+      <span *ngIf="hasUrgentReminders()" class="reminder-mobile-text">Lembretes de cuidados pendentes</span>
     </button>
     <button mat-icon-button (click)="logout()">
       <mat-icon>logout</mat-icon>
