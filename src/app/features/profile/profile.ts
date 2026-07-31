@@ -112,6 +112,31 @@ export class ProfileComponent implements OnInit {
     return this.careRemindersService.getReminders(cat);
   }
 
+  careStatus(
+    catGroup: FormGroup,
+    key: ReminderKey,
+  ): { kind: 'done' | 'soon' | 'pending'; label: string; icon: string } {
+    if (key === 'neutering') {
+      return catGroup.get('neutered')?.value
+        ? { kind: 'done', label: 'Feito', icon: 'check_circle' }
+        : { kind: 'pending', label: 'Pendente', icon: 'cancel' };
+    }
+
+    const value = catGroup.value;
+    const cat: Cat = {
+      age: value.age,
+      lastDeworming: value.lastDeworming,
+      lastVaccine: value.lastVaccine,
+      lastCheckup: value.lastCheckup,
+    };
+    const urgency = this.careRemindersService.getReminders(cat).find((r) => r.key === key)?.urgency;
+
+    if (urgency === 'overdue') return { kind: 'pending', label: 'Vencida', icon: 'cancel' };
+    if (urgency === 'unknown' || !urgency) return { kind: 'pending', label: 'Pendente', icon: 'cancel' };
+    if (urgency === 'soon') return { kind: 'soon', label: 'Vence em breve', icon: 'warning' };
+    return { kind: 'done', label: 'Feito', icon: 'check_circle' };
+  }
+
   markDone(cat: Cat, key: ReminderKey) {
     const cats = this.authService.user()?.cats ?? [];
     const index = cats.indexOf(cat);

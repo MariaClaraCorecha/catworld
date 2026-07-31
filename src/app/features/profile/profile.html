@@ -144,11 +144,21 @@
                                 mat-icon-button
                                 type="button"
                                 class="reminder-done-btn"
+                                [class.reminder-done-btn-pending]="
+                                  reminder.urgency !== 'ok' && reminder.urgency !== 'soon'
+                                "
+                                [class.reminder-done-btn-soon]="reminder.urgency === 'soon'"
                                 (click)="markDone(cat, reminder.key)"
                                 aria-label="Marcar como feito hoje"
                                 matTooltip="Marcar como feito hoje"
                               >
-                                <mat-icon>check_circle</mat-icon>
+                                <mat-icon>{{
+                                  reminder.urgency === 'ok'
+                                    ? 'check_circle'
+                                    : reminder.urgency === 'soon'
+                                      ? 'warning'
+                                      : 'cancel'
+                                }}</mat-icon>
                               </button>
                             }
                           </span>
@@ -253,32 +263,80 @@
 
                   <div class="cat-care-section">
                     <h4 class="cat-care-title">
-                      <mat-icon>vaccines</mat-icon>
+                      <mat-icon>health_and_safety</mat-icon>
                       Cuidados e vacinação
                     </h4>
 
-                    <mat-checkbox formControlName="neutered" class="neutered-checkbox" color="primary">
-                      Já é castrado(a)
-                    </mat-checkbox>
+                    @let neuteringStatus = careStatus(catGroup, 'neutering');
+                    <div class="care-item care-toggle-item">
+                      <mat-checkbox formControlName="neutered" class="neutered-checkbox" color="primary">
+                        Já é castrado(a)
+                      </mat-checkbox>
+                      <span
+                        class="care-status"
+                        [class.care-status-done]="neuteringStatus.kind === 'done'"
+                        [class.care-status-soon]="neuteringStatus.kind === 'soon'"
+                        [class.care-status-pending]="neuteringStatus.kind === 'pending'"
+                      >
+                        <mat-icon>{{ neuteringStatus.icon }}</mat-icon>
+                        {{ neuteringStatus.label }}
+                      </span>
+                    </div>
 
                     <div class="cat-care-grid">
-                      <mat-form-field appearance="outline" class="profile-field">
-                        <mat-label>Última vermifugação</mat-label>
-                        <input matInput type="date" formControlName="lastDeworming" />
-                        <mat-icon matSuffix>medication</mat-icon>
-                      </mat-form-field>
+                      @let dewormingStatus = careStatus(catGroup, 'deworming');
+                      <div class="care-item">
+                        <mat-form-field appearance="outline" class="profile-field">
+                          <mat-label>Última vermifugação</mat-label>
+                          <input matInput type="date" formControlName="lastDeworming" />
+                          <mat-icon matSuffix>medication</mat-icon>
+                        </mat-form-field>
+                        <span
+                          class="care-status"
+                          [class.care-status-done]="dewormingStatus.kind === 'done'"
+                          [class.care-status-soon]="dewormingStatus.kind === 'soon'"
+                          [class.care-status-pending]="dewormingStatus.kind === 'pending'"
+                        >
+                          <mat-icon>{{ dewormingStatus.icon }}</mat-icon>
+                          {{ dewormingStatus.label }}
+                        </span>
+                      </div>
 
-                      <mat-form-field appearance="outline" class="profile-field">
-                        <mat-label>Última vacina/reforço</mat-label>
-                        <input matInput type="date" formControlName="lastVaccine" />
-                        <mat-icon matSuffix>vaccines</mat-icon>
-                      </mat-form-field>
+                      @let vaccineStatus = careStatus(catGroup, 'vaccine');
+                      <div class="care-item">
+                        <mat-form-field appearance="outline" class="profile-field">
+                          <mat-label>Última vacina/reforço</mat-label>
+                          <input matInput type="date" formControlName="lastVaccine" />
+                          <mat-icon matSuffix>vaccines</mat-icon>
+                        </mat-form-field>
+                        <span
+                          class="care-status"
+                          [class.care-status-done]="vaccineStatus.kind === 'done'"
+                          [class.care-status-soon]="vaccineStatus.kind === 'soon'"
+                          [class.care-status-pending]="vaccineStatus.kind === 'pending'"
+                        >
+                          <mat-icon>{{ vaccineStatus.icon }}</mat-icon>
+                          {{ vaccineStatus.label }}
+                        </span>
+                      </div>
 
-                      <mat-form-field appearance="outline" class="profile-field">
-                        <mat-label>Último check-up veterinário</mat-label>
-                        <input matInput type="date" formControlName="lastCheckup" />
-                        <mat-icon matSuffix>local_hospital</mat-icon>
-                      </mat-form-field>
+                      @let checkupStatus = careStatus(catGroup, 'checkup');
+                      <div class="care-item">
+                        <mat-form-field appearance="outline" class="profile-field">
+                          <mat-label>Último check-up veterinário</mat-label>
+                          <input matInput type="date" formControlName="lastCheckup" />
+                          <mat-icon matSuffix>local_hospital</mat-icon>
+                        </mat-form-field>
+                        <span
+                          class="care-status"
+                          [class.care-status-done]="checkupStatus.kind === 'done'"
+                          [class.care-status-soon]="checkupStatus.kind === 'soon'"
+                          [class.care-status-pending]="checkupStatus.kind === 'pending'"
+                        >
+                          <mat-icon>{{ checkupStatus.icon }}</mat-icon>
+                          {{ checkupStatus.label }}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
