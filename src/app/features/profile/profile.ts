@@ -1,5 +1,4 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -8,15 +7,17 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AuthService, Cat } from '../../core/services/auth';
 import { BreedsService } from '../../core/services/breeds';
 import { QuizBadge, QuizService } from '../../core/services/quiz';
+import { CareReminder, CareRemindersService, ReminderKey } from '../../core/services/care-reminders';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
@@ -24,6 +25,8 @@ import { QuizBadge, QuizService } from '../../core/services/quiz';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatTooltipModule,
+    MatCheckboxModule,
   ],
   templateUrl: './profile.html',
   styleUrl: './profile.scss',
@@ -33,6 +36,7 @@ export class ProfileComponent implements OnInit {
   private fb = inject(FormBuilder);
   private breedsService = inject(BreedsService);
   private quizService = inject(QuizService);
+  private careRemindersService = inject(CareRemindersService);
   authService = inject(AuthService);
 
   saved = false;
@@ -67,6 +71,10 @@ export class ProfileComponent implements OnInit {
       color: [cat?.color ?? ''],
       age: [cat?.age ?? ''],
       fur: [cat?.fur ?? ''],
+      neutered: [cat?.neutered ?? false],
+      lastDeworming: [cat?.lastDeworming ?? ''],
+      lastVaccine: [cat?.lastVaccine ?? ''],
+      lastCheckup: [cat?.lastCheckup ?? ''],
     });
   }
 
@@ -98,6 +106,22 @@ export class ProfileComponent implements OnInit {
 
   get filledCats(): Cat[] {
     return (this.authService.user()?.cats ?? []).filter((cat) => cat.name);
+  }
+
+  getReminders(cat: Cat): CareReminder[] {
+    return this.careRemindersService.getReminders(cat);
+  }
+
+  markDone(cat: Cat, key: ReminderKey) {
+    const cats = this.authService.user()?.cats ?? [];
+    const index = cats.indexOf(cat);
+    if (index === -1) return;
+
+    const today = new Date().toISOString().slice(0, 10);
+    const field =
+      key === 'deworming' ? 'lastDeworming' : key === 'vaccine' ? 'lastVaccine' : 'lastCheckup';
+    const updatedCats = cats.map((c, i) => (i === index ? { ...c, [field]: today } : c));
+    this.authService.updateProfile({ cats: updatedCats });
   }
 
   breedImage(breedName?: string): string | undefined {
