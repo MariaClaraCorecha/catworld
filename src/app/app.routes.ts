@@ -1,9 +1,16 @@
 import { Routes } from '@angular/router';
+import { quizCanDeactivateGuard } from './core/guards/quiz-can-deactivate.guard';
 
 export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./features/landing/landing').then((m) => m.LandingComponent),
+  },
+  {
+    path: 'quiz/:quizId',
+    loadComponent: () =>
+      import('./features/quiz-play/quiz-play').then((m) => m.QuizPlayComponent),
+    canDeactivate: [quizCanDeactivateGuard],
   },
   {
     path: 'historia/:id',
