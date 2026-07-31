@@ -9,6 +9,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { filter } from 'rxjs/operators';
 import { AuthService } from '../../core/services/auth';
+import { CareRemindersService } from '../../core/services/care-reminders';
 import { scrollToSection } from '../../core/utils/scroll-to-section';
 
 @Component({
@@ -38,6 +39,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     private router: Router,
     public authService: AuthService,
+    private careRemindersService: CareRemindersService,
   ) {
     this.router.events
       .pipe(filter(e => e instanceof NavigationEnd))
@@ -90,6 +92,10 @@ export class NavbarComponent implements OnInit {
   goToFeedback() {
     this.router.navigate(['/feedback']);
     this.menuOpen = false;
+  }
+
+  hasUrgentReminders(): boolean {
+    return this.careRemindersService.hasUrgentReminder(this.authService.user()?.cats ?? []);
   }
 
   showLoginButton() {
