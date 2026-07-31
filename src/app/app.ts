@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { NavbarComponent } from './shared/navbar/navbar';
 import { Footer } from './shared/footer/footer';
 
@@ -8,9 +9,23 @@ import { Footer } from './shared/footer/footer';
   standalone: true,
   imports: [RouterOutlet, NavbarComponent, Footer],
   template: `
-    <app-navbar />
+    @if (!isQuizPlaySession) {
+      <app-navbar />
+    }
     <router-outlet />
-    <app-footer />
+    @if (!isQuizPlaySession) {
+      <app-footer />
+    }
   `,
 })
-export class AppComponent {}
+export class AppComponent {
+  isQuizPlaySession = false;
+
+  constructor(private router: Router) {
+    this.router.events
+      .pipe(filter((e) => e instanceof NavigationEnd))
+      .subscribe((e) => {
+        this.isQuizPlaySession = (e as NavigationEnd).urlAfterRedirects.startsWith('/quiz/');
+      });
+  }
+}
