@@ -111,15 +111,26 @@ export class CareService {
 
       A vermifugação deve ser feita a cada 3 meses em gatos adultos e mensalmente em filhotes até os 6 meses. Existem vermífugos em pasta, comprimido e pipeta. Converse com o veterinário sobre o produto mais adequado para o seu animal.
 
-      O controle de pulgas e carrapatos também é essencial — esses parasitas podem transmitir doenças graves e causar anemia em filhotes. Antipulgas em pipeta ou coleira são as formas mais práticas de prevenção.`,
+      O controle de pulgas e carrapatos também é essencial — esses parasitas podem transmitir doenças graves e causar anemia em filhotes. Antipulgas em pipeta ou coleira são as formas mais práticas de prevenção.
+
+      Existem ainda vacinas não essenciais, indicadas caso a caso pelo veterinário conforme o estilo de vida do gato. A vacina contra a peritonite infecciosa felina (PIF) é pouco utilizada no Brasil por eficácia limitada. Já a vacina contra a imunodeficiência felina (FIV, o "HIV dos gatos") não é disponível no país — a prevenção nesse caso depende de castração e evitar o contato com gatos de rua, já que a doença se transmite principalmente por mordidas em brigas territoriais.
+
+      Um erro comum é pensar que gatos 100% domésticos, que nunca saem de casa, não precisam de vacina. Além do risco de fuga acidental por uma porta ou janela aberta, vírus como os da V4/V5 podem ser trazidos para dentro de casa nas mãos, roupas ou sapatos do tutor após contato com outros gatos, e a vacina antirrábica costuma ser exigida por lei independentemente do estilo de vida do animal.
+
+      Guarde sempre a carteirinha de vacinação atualizada — muitos hotéis para pets, creches, transporte aéreo e até condomínios exigem a comprovação das doses em dia. Se uma dose de reforço atrasar muito além da data prevista, o veterinário pode recomendar reiniciar o protocolo com uma nova série completa, já que a proteção não é garantida.
+
+      Evite banhos, tosa ou esforço físico intenso nas 48 a 72 horas seguintes à vacinação, período em que o sistema imunológico do gato está ativamente respondendo. Gatos com febre, infecção ativa ou em tratamento imunossupressor no momento da consulta podem precisar ter a vacina postergada — sempre siga a orientação do veterinário responsável pelo calendário do seu animal.`,
       image: 'images/care/vacina.jpg',
       tips: [
         'Vacine com V4 ou V5 a partir de 6 a 8 semanas, em 3 doses',
         'Respeite o intervalo de 3 a 4 semanas entre as doses do filhote',
         'Considere a vacina de leucemia felina (FeLV) se o gato tiver acesso à rua',
-        'Reforce a vacina antirrábica anualmente',
+        'Reforce a vacina antirrábica anualmente, mesmo em gatos 100% domésticos',
         'Vermifugue a cada 3 meses em adultos',
         'Observe o gato nas 48h após a vacina e procure o vet se notar inchaço persistente',
+        'Guarde a carteirinha de vacinação atualizada — pode ser exigida em hotéis, creches e viagens',
+        'Evite banho e esforço físico nas 48 a 72h após a vacina',
+        'Não atrase muito os reforços — atrasos longos podem exigir reiniciar o protocolo completo',
       ],
     },
     {
