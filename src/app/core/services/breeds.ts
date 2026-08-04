@@ -552,6 +552,30 @@ export class BreedsService {
         'Tem forte instinto de caça, mesmo sendo um gato de estimação',
       ],
     },
+    {
+      id: 'sem-raca-definida',
+      name: 'Sem Raça Definida (Vira-lata)',
+      origin: 'Brasil e todo o mundo',
+      lifespan: '12–18 anos',
+      weight: '2,5–6 kg (muito variável)',
+      temperament: 'Diverso, resiliente e afetuoso',
+      summary:
+        'O gato "vira-lata" ou SRD não tem raça definida, mas é o tipo mais comum do mundo — e costuma ser mais saudável e resistente graças à variedade genética.',
+      content: `O gato Sem Raça Definida, popularmente chamado de "vira-lata", é resultado de cruzamentos livres entre gatos domésticos sem nenhum controle de linhagem. É, de longe, o gato mais comum do planeta — a grande maioria dos felinos que vivem em casas, ruas e abrigos se encaixa nessa categoria.
+
+       Por não vir de um padrão fechado de reprodução, o SRD tende a ter maior variabilidade genética, o que reduz a incidência de doenças hereditárias comuns em muitas raças puras. Isso não significa imunidade a problemas de saúde, mas geralmente resulta em animais robustos e adaptáveis.
+
+       Cada gato vira-lata é único: cor, tamanho, formato de pelo e temperamento variam enormemente de um indivíduo para outro, já que não seguem um padrão de raça. Adotar um SRD é também um gesto importante de proteção animal, já que a maioria dos gatos em abrigos e situação de rua se encontra nessa condição.`,
+      icon: 'favorite',
+      image: 'images/breeds/gatos_sem_raça.jpg',
+      characteristics: { energy: 3, affection: 4, grooming: 2, shedding: 3, social: 3 },
+      facts: [
+        'É o tipo de gato mais comum do mundo, presente em quase todos os países',
+        'A grande variedade genética reduz o risco de doenças hereditárias de raças puras',
+        'Não existem dois gatos SRD iguais — cada um tem sua própria combinação única de cor, pelo e personalidade',
+        'Adotar um SRD ajuda diretamente no combate ao abandono e à superpopulação de gatos de rua',
+      ],
+    },
   ];
 
   getAll(): Breed[] {
